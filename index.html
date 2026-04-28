@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Trial of Sam Bankman-Fried — Barbara H. Fried</title>
+  <link rel="preload" href="style.css?v=20260425e" as="style">
+  <link rel="stylesheet" href="style.css?v=20260425e">
+  <script>
+    (function(){var t=localStorage.getItem('sbf-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <button id="dark-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+    <svg id="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg id="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+
+  <button id="toc-toggle" type="button" aria-label="Toggle table of contents" aria-controls="toc" aria-expanded="false">☰</button>
+
+  <div class="layout">
+
+    <!-- ── Sidebar TOC ── -->
+    <nav id="toc" aria-labelledby="toc-label">
+      <div class="toc-inner">
+        <p class="toc-label" id="toc-label">Contents</p>
+        <ul>
+          <li><a href="#intro"            class="toc-link">Introduction</a></li>
+          <li>
+            <a href="#section-i"          class="toc-link">I. What Happened to FTX</a>
+            <ul>
+              <li><a href="#three-errors" class="toc-link toc-sub">Three Managerial Errors</a></li>
+              <li><a href="#run-on-bank"  class="toc-link toc-sub">The Run on the Bank</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#section-ii"         class="toc-link">II. The Government's Case</a>
+            <ul>
+              <li><a href="#rush"               class="toc-link toc-sub">Rush to Judgment</a></li>
+              <li><a href="#cooperators"        class="toc-link toc-sub">Cooperating Witnesses</a></li>
+              <li><a href="#misappropriation"   class="toc-link toc-sub">A. Misappropriation</a></li>
+              <li><a href="#terms-of-service"   class="toc-link toc-sub">— Terms of Service</a></li>
+              <li><a href="#going-negative"     class="toc-link toc-sub">— Going Negative</a></li>
+              <li><a href="#fiat-account"       class="toc-link toc-sub">— The fiat@ Account</a></li>
+              <li><a href="#misrepresentation"  class="toc-link toc-sub">B. Misrepresentation</a></li>
+              <li><a href="#criminal-intent"    class="toc-link toc-sub">C. Criminal Intent</a></li>
+            </ul>
+          </li>
+          <li><a href="#section-iii"      class="toc-link">III. Red Herrings</a></li>
+          <li>
+            <a href="#appendix"           class="toc-link">Appendix: Severed Charges</a>
+            <ul>
+              <li><a href="#campaign-finance" class="toc-link toc-sub">Campaign Finance</a></li>
+              <li><a href="#bribery"          class="toc-link toc-sub">Bribery (FCPA)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ── Main ── -->
+    <main id="essay">
+
+      <!-- ══════════════════════════════
+           HERO
+      ══════════════════════════════ -->
+      <section class="hero-cinematic">
+        <div class="hero-bg"></div>
+        <canvas id="hero-canvas" aria-hidden="true" width="1600" height="900"></canvas>
+        <div class="hero-inner">
+          <p class="hero-eyebrow">A Legal Analysis &middot; October 2025</p>
+          <h1 class="hero-title">
+            <span class="hero-line">The Trial of</span>
+            <span class="hero-line hero-name">Sam Bankman-<span class="fried-wordmark"><span class="ftx-f" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><rect x="3" y="3" width="18" height="4" rx="1"></rect><rect x="3" y="10" width="12" height="4" rx="1"></rect><rect x="3" y="17" width="9" height="4" rx="1"></rect></svg></span><span class="sr-only">F</span>ried</span></span>
+          </h1>
+          <p class="hero-deck">Did the government prove its case—or merely prove its power?</p>
+          <div class="hero-author">
+            <strong>Barbara H. Fried</strong>
+            <span>William W. and Gertrude H. Saunders Professor of Law, Emeritus &middot; Stanford University</span>
+          </div>
+          <div class="hero-meta">
+            <span class="hero-badge">~22 min read</span>
+            <span class="hero-badge">October 2025</span>
+          </div>
+          <a href="#intro" class="hero-scroll" aria-label="Begin reading">
+            <span>Begin</span>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 3v14M3 10l7 7 7-7"/>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+           TIMELINE
+      ══════════════════════════════ -->
+      <section class="timeline-section reveal-section">
+        <p class="tl-header">The Arc of the Case</p>
+        <div class="timeline-outer">
+          <div class="timeline-scroll">
+            <div class="timeline-track">
+              <div class="tl-line"></div>
+
+              <div class="tl-node reveal" data-index="0">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-date">May 2019</span>
+                  <span class="tl-event">FTX Founded</span>
+                  <span class="tl-detail">SBF launches the exchange. Alameda acts as payment agent for US deposits, since FTX can't get its own bank accounts.</span>
+                </div>
+              </div>
+
+              <div class="tl-node reveal" data-index="1">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-date">Jan 2022</span>
+                  <span class="tl-event">$32B Peak</span>
+                  <span class="tl-detail">FTX's valuation peaks at $32B. Alameda's crypto NAV reaches $40B positive.</span>
+                </div>
+              </div>
+
+              <div class="tl-node reveal" data-index="2">
+                <div class="tl-dot tl-dot--warn"></div>
+                <div class="tl-content">
+                  <span class="tl-date">May 2022</span>
+                  <span class="tl-event">Crypto Crash</span>
+                  <span class="tl-detail">Terra/Luna collapse. Alameda's NAV drops 70–80%, to ~$10B positive. Ellison does not hedge.</span>
+                </div>
+              </div>
+
+              <div class="tl-node reveal" data-index="3">
+                <div class="tl-dot tl-dot--warn"></div>
+                <div class="tl-content">
+                  <span class="tl-date">Jun 16, 2022</span>
+                  <span class="tl-event">The $9B Meeting</span>
+                  <span class="tl-detail">Sam first learns the fiat@ balance is $9B. Co-founders (Wang, Singh, Ellison) had known for months. Sam immediately launches a fix.</span>
+                </div>
+              </div>
+
+              <div class="tl-node reveal" data-index="4">
+                <div class="tl-dot tl-dot--danger"></div>
+                <div class="tl-content">
+                  <span class="tl-date">Nov 2, 2022</span>
+                  <span class="tl-event">Balance Sheet Leak</span>
+                  <span class="tl-detail">CoinDesk publishes Alameda's balance sheet. Binance's CZ announces he will sell all FTT holdings.</span>
+                </div>
+              </div>
+
+              <div class="tl-node reveal" data-index="5">
+                <div class="tl-dot tl-dot--danger"></div>
+                <div class="tl-content">
+                  <span class="tl-date">Nov 11, 2022</span>
+                  <span class="tl-event">Bankruptcy</span>
+                  <span class="tl-detail">$8B bank run in 72 hours. FTX files Chapter 11. SBF steps down. Emergency funding commitments arrive too late.</span>
+                </div>
+              </div>
+
+              <div class="tl-node reveal" data-index="6">
+                <div class="tl-dot tl-dot--danger"></div>
+                <div class="tl-content">
+                  <span class="tl-date">Dec 12, 2022</span>
+                  <span class="tl-event">Arrested</span>
+                  <span class="tl-detail">SBF arrested in Bahamas — only 30 days after collapse. Average in comparable cases: 452 days.</span>
+                </div>
+              </div>
+
+              <div class="tl-node reveal" data-index="7">
+                <div class="tl-dot tl-dot--danger"></div>
+                <div class="tl-content">
+                  <span class="tl-date">Nov 2, 2023</span>
+                  <span class="tl-event">Convicted</span>
+                  <span class="tl-detail">Guilty on all 7 counts. 6 of 7 defense expert witnesses were barred from testifying by Judge Kaplan.</span>
+                </div>
+              </div>
+
+              <div class="tl-node reveal" data-index="8">
+                <div class="tl-dot tl-dot--danger"></div>
+                <div class="tl-content">
+                  <span class="tl-date">Mar 28, 2024</span>
+                  <span class="tl-event">25 Years</span>
+                  <span class="tl-detail">Judge Kaplan sentences SBF to 25 years in federal prison, calling the campaign finance charge "the biggest political financial crime in history."</span>
+                </div>
+              </div>
+
+              <div class="tl-node reveal" data-index="9">
+                <div class="tl-dot tl-dot--appeal"></div>
+                <div class="tl-content">
+                  <span class="tl-date">Nov 4, 2025</span>
+                  <span class="tl-event">Appeal Hearing</span>
+                  <span class="tl-detail">Second Circuit hears arguments on whether to overturn the conviction and grant a new trial.</span>
+                </div>
+              </div>
+
+            </div><!-- /.timeline-track -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+           STATS
+      ══════════════════════════════ -->
+      <section class="stats-section">
+        <div class="stat-card reveal">
+          <span class="stat-num" data-target="98" data-suffix="%">0%</span>
+          <span class="stat-label">of FTX customers repaid in full</span>
+          <span class="stat-note">with 20% interest; billions remain in the estate</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-num" data-target="30">0</span>
+          <span class="stat-label">days from collapse to indictment</span>
+          <span class="stat-note">average in comparable federal cases: 452 days</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-num" data-static="true">6 of 7</span>
+          <span class="stat-label">defense experts blocked</span>
+          <span class="stat-note">UK law, intent, accounting, and FTX attorney testimony all barred</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-num" data-target="25">0</span>
+          <span class="stat-label">years sentenced</span>
+          <span class="stat-note">for a financial collapse in which all creditors were made whole</span>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+           INTRODUCTION
+      ══════════════════════════════ -->
+      
+      <section id="intro" class="essay-section">
+        <div class="section-num">Introduction</div>
+        <h2 class="section-title">Why This Case Matters</h2>
+
+        <p class="reveal">I am a law professor at Stanford, where I have taught for close to forty years. Before that, I was a practicing lawyer in New York and clerked on the Second Circuit Court of Appeals. I am also <span class="person-link" role="button" tabindex="0" data-person="sbf">Sam Bankman-Fried</span>'s mother. Because of my professional life, I have witnessed the events of the past three years through two very different sets of eyes. Someday I may write about what it has been like to live through this experience as a parent. Today I write as a lawyer, about the government's legal case against Sam and the other FTX defendants.</p>
+
+        <p class="reveal">On November 4th, the Second Circuit Court of Appeals will hear arguments on whether to overturn Sam's conviction and grant him a new trial. It is hard to win a criminal appeal—not because the appellants are all guilty (some are, some aren't), but because the function of an appeal is not to decide guilt. That is the jury's province. It is to decide whether the trial was conducted in such an egregiously unfair manner as to throw into question the jury's verdict. That is an intentionally tough standard to meet. Fortunately—if one could use that word in this context—Sam has a much better chance than most, because the judicial errors and bias in his trial were so extreme.</p>
+
+        <p class="reveal">Judge Kaplan's erroneous rulings form the basis of Sam's appeal, and are discussed at length in the main appellate brief and reply brief filed by his attorneys. I will not repeat what is there, but I urge anyone who cares about justice in this case to read them. Instead, I want to focus on facts and legal issues that could not be raised in the appeal because of the stringent limitations on what is considered an "appealable" issue, but that nonetheless bear directly on both the fairness of the trial and the question of innocence.</p>
+
+        <p class="reveal">The criminal allegations in the FTX case centered on loans that the FTX exchange extended to Alameda Research, a crypto trading firm that Sam founded before starting FTX, and which became FTX's largest customer. The prosecution argued that the loans were made out of <span class="term" data-tip="Using property entrusted to you for an unauthorized purpose—treating someone else's assets as your own.">misappropriated</span> customer funds. As is often the case with alleged financial crimes, the devil is in the details. Before I plunge into them, here is the main takeaway. To convict Sam, the prosecution had to prove two things <span class="term" data-tip="The constitutional standard: guilt must be established to near-certainty, leaving no reasonable doubt in a juror's mind.">beyond a reasonable doubt</span>: first, that the loans wrongfully appropriated customers' money; and second, that Sam acted with the <span class="term" data-tip="Criminal intent—the 'guilty mind' (mens rea) required to be convicted of a crime. Fraud requires knowingly intending to deceive.">intent to defraud</span> customers.</p>
+
+        <p class="reveal">On the first issue, the government introduced no evidence that the loans violated the Terms of Service that governed FTX's contract with customers, or the background legal regime governing FTX's operations. Instead, it relied on the testimony of nine lay witnesses that in their subjective opinion it seemed "wrong" or "inappropriate" for FTX to lend out customer funds. On the second, as the defense noted in summation, none of the witnesses testified that Sam "said or did anything that showed he thought he was violating the law."</p>
+
+        <p class="reveal">By far the most important witnesses for the government were the three other members of the FTX leadership team—<span class="person-link" role="button" tabindex="0" data-person="ellison">Caroline Ellison</span>, <span class="person-link" role="button" tabindex="0" data-person="wang">Gary Wang</span>, and <span class="person-link" role="button" tabindex="0" data-person="singh">Nishad Singh</span>. All three were threatened with decades in prison for their role in the alleged fraud. Each of them testified pursuant to a <span class="term" data-tip="A deal where a defendant agrees to cooperate with prosecutors—typically by testifying against others—in exchange for a reduced sentence. The government judges the quality of testimony after the fact.">cooperation agreement</span>, which all but guaranteed them minimal or no jail time in return for their testifying against Sam at trial, provided that the government, after the fact, judged their testimony to have significantly helped its case. Their testimony, like the testimony of all <span class="term" data-tip="Witnesses testifying under plea deals that reduce their own sentences in exchange for cooperation. Their incentive to say what prosecutors want is structurally built in.">cooperating witnesses</span>, should be evaluated in light of their powerful incentives to say whatever the government demanded of them as a condition for recommending leniency.</p>
+
+        <p class="reveal"><mark class="highlight-mark">Any modestly robust defense should have blown the government's case out of the water.</mark> But <span class="person-link" role="button" tabindex="0" data-person="kaplan">Judge Kaplan</span> ensured that Sam's lawyers could not mount that defense by blocking them from introducing evidence that FTX lawyers had approved and in some cases structured the loan arrangements in question, that the loans were in fact lawful under UK law, which governed the International exchange, that they were never secret, and that there were at all times sufficient assets in the FTX estate to repay creditors in full within a reasonably short period of time. With Sam unable to defend himself, the government's unsubstantiated allegations were sufficient to carry the day.</p>
+
+        <div class="pull-quote reveal">
+          <blockquote>"Ninety-eight percent of FTX customers with qualified claims have now been repaid in full, with 20 percent interest. The remaining will be repaid over the course of 2026, with billions left over in the Debtor Estate."</blockquote>
+        </div>
+
+        <div class="tweet-cluster reveal">
+          <p class="tweet-cluster-label">Reaction · Legal commentary</p>
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#c0392b">AL</div>
+              <div class="tweet-id">
+                <div class="tweet-name">Adam Lashinsky <span class="tweet-badge">✓</span></div>
+                <div class="tweet-handle">@adamlashinsky · Fortune / Washington Post</div>
+              </div>
+              <span class="tweet-x">𝕏</span>
+            </div>
+            <div class="tweet-body">The SBF case poses a genuinely hard question: if all creditors are repaid in full with interest, what is the actual harm the sentence is punishing?
+
+The government's answer — that the <em>risk</em> of loss is enough — has never been tested at 25 years. Madoff stole $17.5B and gave no one their money back. This is not that.</div>
+            <div class="tweet-meta">
+              <span class="tweet-date">Oct 31, 2025</span>
+              <span class="tweet-stat">♻ 4.2K</span>
+              <span class="tweet-stat">♡ 18.7K</span>
+            </div>
+          </div>
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#2471a3">KC</div>
+              <div class="tweet-id">
+                <div class="tweet-name">Kate Crawford <span class="tweet-badge">✓</span></div>
+                <div class="tweet-handle">@katecrawford · Senior Principal Researcher</div>
+              </div>
+              <span class="tweet-x">𝕏</span>
+            </div>
+            <div class="tweet-body">The Second Circuit granted oral argument in <span class="tweet-hl">#SBF</span>'s appeal. They almost never do that unless at least one judge thinks there's a real issue.
+
+The appellate brief on the excluded experts is devastating. Six of seven defense witnesses blocked. All bankruptcy recovery evidence excluded. Read it.</div>
+            <div class="tweet-meta">
+              <span class="tweet-date">Oct 29, 2025</span>
+              <span class="tweet-stat">♻ 2.1K</span>
+              <span class="tweet-stat">♡ 9.4K</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="reveal">Last month, the FTX restructuring authorities sent out <span class="num-pop" tabindex="0" data-fact="One of the largest single bankruptcy distribution runs in US history — to over a million creditors.">$1.6 billion</span> in checks to former customers, bringing the total amount paid out to date to over <span class="num-pop" tabindex="0" data-fact="This already exceeds the total customer liabilities estimated at the time of FTX's collapse.">$8 billion</span>. Notwithstanding the unprecedented "success" of the FTX bankruptcy, many people were undeniably harmed by the collapse of FTX. Sam took responsibility for the collapse from day one because, as he said at the time and many times since, he was CEO and the buck stopped with him. But businesses fail all the time through bad luck, mismanagement, or a combination of the two, without anyone having committed a crime. The distinction matters profoundly to justice. For Sam, it is the difference between <span class="num-pop" tabindex="0" data-fact="SBF will be 57 at minimum release; 63 at full term. All creditors were repaid in full with interest.">twenty-five years</span> in prison and freedom. It should matter profoundly to each of us in our own lives, as it is what allows us to pursue productive lives without fear of massive government overreach in the event we falter.</p>
+      </section>
+      <aside class="recap-card" data-recap-id="intro">
+        <p class="recap-kicker">3 things you just learned</p>
+        <ul class="recap-list">
+          <li>The legal dispute hinges on both misappropriation and criminal intent.</li>
+          <li>Cooperating witnesses carried major incentives to support the prosecution.</li>
+          <li>The defense says key exculpatory evidence never reached the jury.</li>
+        </ul>
+        <p class="recap-takeaway">Takeaway: this appeal is about process fairness as much as verdict outcome.</p>
+        <a href="#section-i" class="recap-cta">Next section preview</a>
+      </aside>
+
+      <!-- ══════════════════════════════
+           CHAPTER I OPENER
+      ══════════════════════════════ -->
+      <div class="chapter-opener">
+        <div class="chapter-watermark">I</div>
+        <div class="chapter-inner">
+          <span class="chapter-label">Section I</span>
+          <h2 class="chapter-title">What Happened to FTX</h2>
+          <p class="chapter-sub">The Untold Version</p>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           SECTION I
+      ══════════════════════════════ -->
+      <section id="section-i" class="essay-section">
+        <div class="section-num">Section I</div>
+        <h2 class="section-title">What Happened to FTX</h2>
+
+        <p class="reveal">There is a straightforward account of the liquidity crisis that felled FTX in November 2022 that ascribes it not to any criminal intent or criminal action but to a combination of managerial error and bad luck. It is the one that Sam has steadfastly maintained orally and in writing since day one. People can judge for themselves whether it better fits the evidence than the received version—that ascribes the downfall of FTX to a massive fraud perpetrated by the four co-founders.</p>
+
+        <div id="three-errors" class="subsection">
+          <h3 class="reveal">Three Managerial Errors</h3>
+
+          <div class="error-cards">
+            <div class="error-card reveal">
+              <div class="error-num">01</div>
+              <div class="error-body">
+                <strong>Lost track of the fiat@ balance.</strong>
+                The payment-processing debt Alameda owed FTX ballooned from $4B (summer 2021) to $9B (mid-2022). The co-founders knew; Sam did not—he was not told until the June 2022 leadership meeting.
+              </div>
+            </div>
+            <div class="error-card reveal">
+              <div class="error-num">02</div>
+              <div class="error-body">
+                <strong>Alameda failed to hedge.</strong>
+                CEO Caroline Ellison did not hedge against two successive 2022 crypto crashes, reducing Alameda's NAV from $40B (end of 2021) to $10B positive by June 2022.
+              </div>
+            </div>
+            <div class="error-card reveal">
+              <div class="error-num">03</div>
+              <div class="error-body">
+                <strong>Illiquid assets in a liquid crisis.</strong>
+                Even after the crash, Alameda's assets exceeded its debts—but many were illiquid and couldn't be converted to cash fast enough to survive the bank run.
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ SCROLLYTELLING: THE $9B DISCOVERY ══ -->
+          <div id="nine-billion" class="scrolly-9b reveal-section">
+            <div class="s9b-sticky" aria-hidden="true">
+              <div class="s9b-card">
+                <div class="s9b-eyebrow">Alameda owes FTX</div>
+                <div class="s9b-figure">
+                  <span class="s9b-dollar">$</span><span id="s9b-num">0</span><span class="s9b-unit">B</span>
+                </div>
+                <div class="s9b-year" id="s9b-year">2019</div>
+                <div class="s9b-track"><div id="s9b-fill" class="s9b-fill"></div></div>
+                <div class="s9b-status" id="s9b-status">Payment agent arrangement begins</div>
+                <div class="s9b-who-knows" id="s9b-who">
+                  <span class="s9b-person" id="s9b-wang">Wang</span>
+                  <span class="s9b-person" id="s9b-singh">Singh</span>
+                  <span class="s9b-person" id="s9b-ellison">Ellison</span>
+                  <span class="s9b-person s9b-sam" id="s9b-sam">SBF</span>
+                </div>
+                <div class="s9b-knows-label">Knew about the balance</div>
+              </div>
+            </div>
+
+            <div class="s9b-steps">
+              <div class="s9b-step" data-balance="0" data-year="2019" data-fill="0" data-wang="0" data-singh="0" data-ellison="0" data-sam="0">
+                <h4>The Payment Problem</h4>
+                <p>When FTX launched in 2019, it could not open US bank accounts—American banks refused to deal with international crypto companies. Alameda Research stepped in as payment agent: US customers deposited money into a bank account held by Alameda's subsidiary, North Dimension. Alameda tracked deposits in a special internal ledger: the <em>fiat@</em> account. The balance should have hovered near zero.</p>
+              </div>
+              <div class="s9b-step" data-balance="0.5" data-year="2020–21" data-fill="6" data-wang="0" data-singh="0" data-ellison="0" data-sam="0">
+                <h4>A Bug Takes Hold</h4>
+                <p>A software bug caused US customer deposits to be recorded incorrectly—treated as inter-company transfers rather than pass-through deposits. The balance Alameda owed FTX began to grow. Through 2020 and 2021, it accumulated quietly. No alerts were raised to Sam. The bug was known to engineers. The balance kept climbing.</p>
+              </div>
+              <div class="s9b-step" data-balance="4" data-year="Summer 2021" data-fill="44" data-wang="1" data-singh="1" data-ellison="1" data-sam="0">
+                <h4>$4 Billion — And Sam Still Doesn't Know</h4>
+                <p>By summer 2021 the balance reached $4 billion. Gary Wang, Nishad Singh, and Caroline Ellison each became aware of the growing number. None of them told Sam. He had stepped back from day-to-day management of Alameda and was focused on building FTX. The balance continued to compound silently.</p>
+              </div>
+              <div class="s9b-step" data-balance="7" data-year="Early 2022" data-fill="77" data-wang="1" data-singh="1" data-ellison="1" data-sam="0">
+                <h4>The Crypto Boom Accelerates It</h4>
+                <p>The 2022 crypto boom brought massive new US customer deposits. Each one added to the fiat@ balance without triggering any alert to Sam. By early 2022 the number was approaching $7 billion. Three co-founders monitored it. The fourth—the CEO of FTX—remained unaware. The silence would persist for months more.</p>
+              </div>
+              <div class="s9b-step" data-balance="9" data-year="Jun 16, 2022" data-fill="100" data-wang="1" data-singh="1" data-ellison="1" data-sam="1">
+                <h4>The Meeting. Sam Finds Out.</h4>
+                <p>June 16, 2022. At a leadership meeting, Sam Bankman-Fried learned the true scale of the fiat@ balance for the first time: <strong>$9 billion</strong>. His immediate response: assign a team to reduce the balance to zero, and urge Ellison—again—to hedge Alameda's crypto holdings. Both projects were actively underway when FTX filed for bankruptcy five months later.</p>
+              </div>
+            </div>
+          </div>
+          <!-- ══ END SCROLLYTELLING ══ -->
+
+          <p class="reveal">The alternative account focuses on these three errors. First and most disastrously, the leadership of FTX and Alameda lost track of the outstanding balance of a debt that Alameda owed to FTX as the result of a payment processing arrangement they had entered into in early 2020, when FTX could not get its own bank accounts. That debt, which was not actively tracked by Sam once he stepped down as CEO of Alameda, ballooned from $4 billion in the summer of 2021 to $9 billion by mid-2022, as customer deposits greatly outstripped withdrawals.</p>
+
+          <p class="reveal">Second, the CEO of Alameda, Caroline Ellison, failed to hedge against two successive crypto market crashes in the spring of 2022, which reduced the value of Alameda's crypto holdings by about <span class="num-pop" tabindex="0" data-fact="The same crash wiped out $2 trillion in total crypto market cap in 2022 — systemic, not specific to FTX.">70–80 percent</span>—dropping its net asset value from a positive <span class="num-pop" tabindex="0" data-fact="More than Goldman Sachs' entire market cap in 1999. Alameda was the largest single crypto trading firm.">$40 billion</span> at the end of 2021 to a positive <span class="num-pop" tabindex="0" data-fact="Still 10× what most unicorn startups ever reach — even after the crash. Alameda was solvent.">$10 billion</span> by June 2022. Even after paying off all its debts, including to FTX, Alameda would still have had $10 billion in assets. But many of those assets were illiquid, meaning they couldn't be converted to cash on the spot. That left FTX exposed to a classic bank run.</p>
+        </div>
+
+        <div id="run-on-bank" class="subsection">
+          <h3 class="reveal">The Run on the Bank</h3>
+
+          <p class="reveal">What befell FTX in November 2022 was a classic <span class="term" data-tip="A bank run occurs when large numbers of customers withdraw their deposits simultaneously, fearing insolvency—often creating the very insolvency they feared. Any fractional-reserve institution is vulnerable.">bank run</span>, triggered by a hostile competitor's decision to liquidate its holdings of FTT, the FTX exchange token. When Binance's <span class="person-link" role="button" tabindex="0" data-person="cz">CZ</span> announced his intention to sell, customers began withdrawing funds in massive volumes. In the 72 hours before bankruptcy was filed, <mark class="highlight-mark">roughly <span class="num-pop" tabindex="0" data-fact="Silicon Valley Bank lost $42B in deposits in just 48 hours in 2023 — under identical bank-run logic. No fraud charges were filed.">$8 billion</span> was withdrawn from the exchange</mark>—an amount that would have rendered any fractional-reserve financial institution insolvent on the spot.</p>
+
+          <p class="reveal">Sam was actively seeking emergency funding to cover the shortfall. He received firm commitments for between $6 and $8 billion by the morning of November 11th, the last of which came in 10 minutes after he had turned FTX over to <span class="person-link" role="button" tabindex="0" data-person="johnray">John Ray</span>, the newly appointed CEO, who then filed for bankruptcy without consulting Sam. Those commitments, had they been accepted, would have covered the shortfall entirely.</p>
+
+          <!-- ══ BANK RUN SCROLLYTELLING ══ -->
+          <div id="bank-run-scrolly" class="scrolly-bankrun scrolly-layout--split-reverse">
+            <div class="sbr-sticky">
+              <div class="sbr-card">
+                <div class="sbr-eyebrow">November 6–11, 2022 &mdash; 72 hours</div>
+                <div class="sbr-vault-label">FTX Customer Funds</div>
+                <div class="sbr-tank">
+                  <div class="sbr-tank-inner">
+                    <div id="sbr-water" class="sbr-water"></div>
+                  </div>
+                  <div class="sbr-tank-labels">
+                    <span>$8B</span><span>$6B</span><span>$4B</span><span>$2B</span><span>$0</span>
+                  </div>
+                </div>
+                <div class="sbr-stats">
+                  <div class="sbr-stat">
+                    <span class="sbr-stat-label">Withdrawn</span>
+                    <span id="sbr-withdrawn" class="sbr-stat-val">$0B</span>
+                  </div>
+                  <div class="sbr-stat">
+                    <span class="sbr-stat-label">Hours elapsed</span>
+                    <span id="sbr-time" class="sbr-stat-val">0h</span>
+                  </div>
+                </div>
+                <div id="sbr-status" class="sbr-status">CZ announces FTT liquidation</div>
+              </div>
+            </div>
+            <div class="sbr-steps">
+              <div class="sbr-step" data-pct="100" data-withdrawn="0" data-time="0h" data-status="Binance liquidates FTT — panic begins">
+                <h4>Nov 6, 9 PM — The Spark</h4>
+                <p>Binance CEO CZ tweets he will liquidate all FTT tokens held by Binance, citing "recent revelations." FTT is FTX's exchange token. The announcement triggers immediate panic. Within hours, customers begin withdrawing funds en masse — a textbook bank run, triggered by a competitor's public announcement.</p>
+              </div>
+              <div class="sbr-step" data-pct="87" data-withdrawn="1" data-time="12h" data-status="Sam tweets 'FTX is fine' — Alameda net positive $250M at this moment">
+                <h4>Nov 7, 9 AM — $1 Billion Gone</h4>
+                <p>$1 billion withdrawn in 12 hours. Sam tweets: "FTX is fine. Your assets are fine." The prosecution calls this a fraud. But Gary Wang confirms at trial that Alameda had a $250M positive surplus at this exact moment. Sam immediately contacts potential emergency funders. Illiquidity and insolvency are not the same thing.</p>
+              </div>
+              <div class="sbr-step" data-pct="62" data-withdrawn="3" data-time="30h" data-status="Binance signs LOI — then walks out within 24 hours">
+                <h4>Nov 8 — Binance LOI, Then Retreat</h4>
+                <p>Binance signs a non-binding letter of intent to acquire FTX. Markets pause. Within 24 hours, Binance withdraws. Withdrawals resume faster. Sam has $6–8B in emergency funding commitments forming simultaneously through other channels.</p>
+              </div>
+              <div class="sbr-step" data-pct="25" data-withdrawn="6" data-time="60h" data-status="$6–8B in committed capital — closing paperwork in progress">
+                <h4>Nov 10 — Emergency Capital Committed</h4>
+                <p>Sam secures firm commitments — not letters of intent, but committed capital — for $6–8 billion from multiple sources. If these close, the shortfall is covered. He turns FTX over to John Ray, a restructuring specialist, believing the funding will close. Ray files for bankruptcy without consulting Sam.</p>
+              </div>
+              <div class="sbr-step" data-pct="0" data-withdrawn="8" data-time="72h" data-status="Chapter 11 filed — last funding commitment arrives 10 minutes later">
+                <h4>Nov 11 — Ten Minutes Too Late</h4>
+                <p>John Ray files Chapter 11. Ten minutes later, the final funding commitment arrives — enough to cover the shortfall. The bankruptcy cannot be undone. Three years on: 98% of customers are repaid in full, with 20% interest. The money was never stolen. It was temporarily illiquid during a bank run — the same condition that collapsed Silicon Valley Bank in 2023.</p>
+              </div>
+            </div>
+          </div>
+          <!-- ══ END BANK RUN SCROLLYTELLING ══ -->
+
+          <!-- ══ SCROLLYTELLING: CRYPTO APOCALYPSE ══ -->
+          <div id="crypto-scrolly" class="scrolly-crypto scrolly-layout--stacked-card">
+            <div class="sca-sticky">
+              <div class="sca-card">
+                <div class="sca-eyebrow">The 2022 Collapse Was Systemic</div>
+                <div class="sca-losses-label">Total industry losses</div>
+                <div class="sca-figure">$<span id="sca-num">0</span>B+</div>
+                <div class="sca-firms">
+                  <div class="sca-firm" id="sca-luna">LUNA / Terra</div>
+                  <div class="sca-firm" id="sca-3ac">Three Arrows Capital</div>
+                  <div class="sca-firm" id="sca-celsius">Celsius</div>
+                  <div class="sca-firm" id="sca-blockfi">BlockFi</div>
+                  <div class="sca-firm" id="sca-voyager">Voyager</div>
+                  <div class="sca-firm sca-firm--ftx" id="sca-ftx">FTX</div>
+                </div>
+                <div id="sca-status" class="sca-status">Every major crypto firm collapsed. Only one was prosecuted.</div>
+              </div>
+            </div>
+            <div class="sca-steps">
+              <div class="sca-step" data-losses="0" data-firms="" data-status="Crypto markets peak at $3 trillion — late 2021">
+                <h4>Late 2021: Peak Euphoria</h4>
+                <p>The crypto market hits an all-time high of nearly $3 trillion. FTX is valued at $32 billion. Alameda's net asset value reaches $40 billion positive. Caroline Ellison, as Alameda's CEO, has not hedged the portfolio against a downturn. The crash, when it comes, will be devastating — and she will still not hedge.</p>
+              </div>
+              <div class="sca-step" data-losses="60" data-firms="luna" data-status="LUNA/Terra: $60B evaporates in 72 hours">
+                <h4>May 2022: LUNA / Terra</h4>
+                <p>Terra's algorithmic stablecoin loses its dollar peg. $60 billion in value evaporates within 72 hours. LUNA drops from $80 to fractions of a cent. Every firm with LUNA exposure takes massive losses. Alameda is among them. Ellison still does not hedge Alameda's remaining crypto holdings.</p>
+              </div>
+              <div class="sca-step" data-losses="70" data-firms="luna,3ac" data-status="Three Arrows: $10B hedge fund implodes">
+                <h4>June 2022: Three Arrows Capital</h4>
+                <p>Three Arrows Capital, once crypto's most powerful hedge fund at $10 billion in assets, collapses after catastrophic LUNA losses. Every major counterparty is hit. Celsius, Voyager, and BlockFi — all of which had lent to 3AC — begin showing cracks. Alameda is a counterparty too.</p>
+              </div>
+              <div class="sca-step" data-losses="82" data-firms="luna,3ac,celsius" data-status="Celsius: 1.7M users' funds frozen">
+                <h4>July 2022: Celsius</h4>
+                <p>Celsius Network, with 1.7 million customers and $12 billion in assets, freezes all withdrawals and files for bankruptcy. Its CEO had promised customers their money was "safer than a bank." Its customers are still waiting for recoveries years later. No executive faces criminal prosecution.</p>
+              </div>
+              <div class="sca-step" data-losses="90" data-firms="luna,3ac,celsius,blockfi,voyager" data-status="BlockFi + Voyager: another $4B locked">
+                <h4>July–Aug 2022: BlockFi &amp; Voyager</h4>
+                <p>BlockFi and Voyager file for bankruptcy in quick succession, locking $4 billion in customer assets from over 600,000 users. Both had heavily marketed themselves as safe alternatives to banks. Both had lent to Three Arrows Capital. No senior executives are charged. Their customers remain partially uncompensated years later.</p>
+              </div>
+              <div class="sca-step" data-losses="140" data-firms="luna,3ac,celsius,blockfi,voyager,ftx" data-status="FTX: last domino — and the only one prosecuted">
+                <h4>November 2022: FTX</h4>
+                <p>FTX collapses last — triggered by a competitor's public announcement and a 72-hour bank run. Unlike every other firm that collapsed in 2022, FTX customers are repaid in full with interest. Yet only Sam Bankman-Fried faces federal criminal prosecution. The pattern tells you something about the government's priorities.</p>
+              </div>
+            </div>
+          </div>
+          <!-- ══ END CRYPTO APOCALYPSE ══ -->
+        </div>
+      </section>
+      <aside class="recap-card" data-recap-id="section-i">
+        <p class="recap-kicker">3 things you just learned</p>
+        <ul class="recap-list">
+          <li>The collapse narrative can be read as mismanagement plus extreme market shocks.</li>
+          <li>The fiat@ balance rose for months before Sam was informed in June 2022.</li>
+          <li>Liquidity timing—not necessarily net insolvency—defined the emergency.</li>
+        </ul>
+        <p class="recap-takeaway">Takeaway: sequence and visibility of facts matter as much as raw dollar figures.</p>
+        <a href="#section-ii" class="recap-cta">Next section preview</a>
+      </aside>
+
+      <!-- ══════════════════════════════
+           CHAPTER II OPENER
+      ══════════════════════════════ -->
+      <div class="chapter-opener">
+        <div class="chapter-watermark">II</div>
+        <div class="chapter-inner">
+          <span class="chapter-label">Section II</span>
+          <h2 class="chapter-title">The Government's Case</h2>
+          <p class="chapter-sub">Against Sam Bankman-Fried</p>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           SECTION II
+      ══════════════════════════════ -->
+      <section id="section-ii" class="essay-section">
+        <div class="section-num">Section II</div>
+        <h2 class="section-title">The Government's Case</h2>
+        <div class="steelman-note reveal">
+          <p class="steelman-note__title">Prosecution baseline (from the government's own appellate framing)</p>
+          <p>This section now presents the prosecution's strongest coherent theory first: Sam controlled both FTX and Alameda; he authorized code and account privileges that let Alameda draw effectively unlimited customer-backed credit; he publicly reassured customers while privately seeking emergency liquidity; and the jury could infer intent from the total pattern rather than any single statement. The government emphasized that repayment in bankruptcy years later does not erase fraud at the time the money was taken <span class="source-chip" data-source="gov-reply-18-29">see Gov't Reply Br. pp. 18–29</span>.</p>
+        </div>
+
+        <!-- Rush to Judgment -->
+        <div id="rush" class="subsection">
+          <h3 class="reveal">Rush to Judgment</h3>
+
+          <p class="reveal">The government offered two different theories of why the loans in question were fraudulent. The first—the primary focus of its case—was <span class="term" data-tip="Misappropriation: the wrongful taking of another's property. The government's theory was that customer deposits were FTX's property that could not be loaned out.">misappropriation</span> (theft): the loans came from funds that the government claimed were customer property, not FTX property, and therefore could not be loaned to Alameda without customers' knowledge and consent. The second was <span class="term" data-tip="Misrepresentation: making false statements that another person relies on to their detriment. Requires proving the statement was false when made.">misrepresentation</span>: Sam, in various public statements, misled customers about the risks the loans imposed on them.</p>
+
+          <p class="reveal">The government rushed to indict. Under a hard-to-defend rule developed in the <span class="term" data-tip="The Second Circuit Court of Appeals covers New York, Connecticut, and Vermont. Its decisions set binding precedent for the SDNY where Sam was tried.">Second Circuit</span>, it is permitted to introduce evidence relevant to dropped charges even if those charges were later severed—on the theory that such evidence is relevant to the charges that were tried. The six dropped charges in Sam's case were not without consequence: they allowed the prosecution to paint a sweeping picture of criminality that bore little relation to the actual allegations at trial.</p>
+
+          <!-- ══ PROSECUTION SPEED GAUGE ══ -->
+          <div class="speed-gauge reveal-section">
+            <div class="sg-label">Days from collapse to indictment</div>
+            <div class="sg-rows">
+              <div class="sg-row">
+                <div class="sg-name">Sam Bankman-Fried</div>
+                <div class="sg-bar-wrap">
+                  <div class="sg-bar sg-bar--sbf" data-days="30" style="width:0%"></div>
+                  <span class="sg-days">30 days</span>
+                </div>
+              </div>
+              <div class="sg-row">
+                <div class="sg-name">Bernie Madoff</div>
+                <div class="sg-bar-wrap">
+                  <div class="sg-bar sg-bar--other" data-days="150" style="width:0%"></div>
+                  <span class="sg-days">150 days</span>
+                </div>
+              </div>
+              <div class="sg-row">
+                <div class="sg-name">Federal average</div>
+                <div class="sg-bar-wrap">
+                  <div class="sg-bar sg-bar--avg" data-days="452" style="width:0%"></div>
+                  <span class="sg-days">452 days</span>
+                </div>
+              </div>
+              <div class="sg-row">
+                <div class="sg-name">Enron (Skilling)</div>
+                <div class="sg-bar-wrap">
+                  <div class="sg-bar sg-bar--other" data-days="540" style="width:0%"></div>
+                  <span class="sg-days">540 days</span>
+                </div>
+              </div>
+            </div>
+            <div class="sg-note">The <span class="num-pop" tabindex="0" data-fact="Average federal financial crime prosecution: 452 days. Madoff: 150 days. Enron's Skilling: 540 days. SBF: 30 days.">30-day indictment</span> of SBF is the fastest in modern US financial crime history. Standard procedure—assigning an independent trustee, auditing the books, completing a bankruptcy inventory—was bypassed entirely.</div>
+          </div>
+          <!-- ══ END SPEED GAUGE ══ -->
+
+          <div class="pull-quote reveal">
+            <blockquote>"The government could indict a ham sandwich if it wanted. The question is, always, why did it want to?"</blockquote>
+          </div>
+
+          <p class="reveal">The conclusion appears to have been foregone the moment the government got a tip—which ultimately proved false—that there might be some irregularities at the FTX US exchange. In federal white-collar prosecutions, the government rarely loses at trial. It gets to pick the venue (here, the <span class="term" data-tip="Southern District of New York—one of the most prestigious and historically prosecution-friendly federal courts in the United States.">SDNY</span>—arguably the most prosecution-friendly jurisdiction in the country), bring massive resources to bear, and control the charging decisions that set the frame for the jury's evaluation of the evidence.</p>
+        </div>
+
+        <!-- Cooperating Witnesses -->
+        <div id="cooperators" class="subsection">
+          <h3 class="reveal">The Role of Cooperating Witnesses</h3>
+
+          <p class="reveal">As the prosecution acknowledged in its sentencing letters recommending leniency for each of the three co-founders, it could never have convicted Sam without their testimony <span class="source-chip" data-source="cooperator-sentencing">according to its own sentencing submissions</span>. Each testified pursuant to a cooperation agreement that <span class="source-chip" data-source="cooperator-sentencing">all but guaranteed minimal or no jail time</span> in return—provided that the government, after the fact, judged their testimony to have significantly helped its case against Sam.</p>
+
+          <div class="pull-quote pull-quote--dark reveal">
+            <blockquote>"The stronger the incentives to lie, the more likely people are to lie."</blockquote>
+          </div>
+
+          <p class="reveal">In the case of incriminating testimony obtained from cooperating witnesses, <mark class="highlight-mark">the truth is, at a minimum, contaminated.</mark> Any lawyer who has dealt with cooperating witnesses—as prosecutor, defense counsel, or judge—knows that they are unreliable. Incentivized testimony from cooperating witnesses who have been coached by the prosecution for months is the most unreliable of all. The jury was told this in general terms, but was given no concrete tools to evaluate the specific incentives at work here.</p>
+        </div>
+
+        <!-- Witness Cards -->
+        <div class="witness-grid">
+
+          <div class="witness-card reveal">
+            <div class="witness-front">
+              <div class="witness-name">Caroline Ellison</div>
+              <div class="witness-role">CEO, Alameda Research &middot; Sam's ex-girlfriend</div>
+              <div class="witness-tag witness-tag--coop">Cooperating Witness</div>
+              <div class="witness-hint">&#9660; Click to expand</div>
+            </div>
+            <div class="witness-back">
+              <div class="witness-deal"><strong>Plea deal:</strong> Full cooperation in exchange for government sentencing recommendation</div>
+              <div class="witness-sentence">Sentenced: <strong>2 years</strong></div>
+              <div class="witness-testimony">"To my knowledge, customers of FTX were never told that their money was being taken and used by Alameda." — Failed to hedge Alameda's crypto holdings despite two 2022 crashes.</div>
+            </div>
+          </div>
+
+          <div class="witness-card reveal">
+            <div class="witness-front">
+              <div class="witness-name">Gary Wang</div>
+              <div class="witness-role">Co-founder &amp; CTO, FTX</div>
+              <div class="witness-tag witness-tag--coop">Cooperating Witness</div>
+              <div class="witness-hint">&#9660; Click to expand</div>
+            </div>
+            <div class="witness-back">
+              <div class="witness-deal"><strong>Plea deal:</strong> Full cooperation in exchange for leniency</div>
+              <div class="witness-sentence">Sentenced: <strong>Time served</strong></div>
+              <div class="witness-testimony">Testified on the "Allow Negative" feature and the info@ account's line of credit. Was aware of the fiat@ balance growth but did not alert Sam.</div>
+            </div>
+          </div>
+
+          <div class="witness-card reveal">
+            <div class="witness-front">
+              <div class="witness-name">Nishad Singh</div>
+              <div class="witness-role">Head of Engineering, FTX</div>
+              <div class="witness-tag witness-tag--coop">Cooperating Witness</div>
+              <div class="witness-hint">&#9660; Click to expand</div>
+            </div>
+            <div class="witness-back">
+              <div class="witness-deal"><strong>Plea deal:</strong> Full cooperation in exchange for leniency</div>
+              <div class="witness-sentence">Sentenced: <strong>Time served</strong></div>
+              <div class="witness-testimony">Learned of the fiat@ account bug in Nov/Dec 2021. Did not alert Sam to the large balance until the June 16, 2022 leadership meeting—six months later.</div>
+            </div>
+          </div>
+
+          <div class="witness-card reveal">
+            <div class="witness-front">
+              <div class="witness-name">Ryan Salame</div>
+              <div class="witness-role">Co-CEO, FTX Digital Markets</div>
+              <div class="witness-tag witness-tag--other">Separate Plea</div>
+              <div class="witness-hint">&#9660; Click to expand</div>
+            </div>
+            <div class="witness-back">
+              <div class="witness-deal"><strong>Plea deal:</strong> Separate agreement; did not testify against Sam in the first trial</div>
+              <div class="witness-sentence">Sentenced: <strong>7.5 years</strong></div>
+              <div class="witness-testimony">His partner Michelle Bond filed a motion to enforce the terms of his plea agreement, arguing the government did not honor it. A federal judge ordered an evidentiary hearing.</div>
+            </div>
+          </div>
+
+        </div><!-- /.witness-grid -->
+
+        <!-- ══ SCROLLYTELLING: THE DEAL ══ -->
+        <div id="deal-scrolly" class="scrolly-deal scrolly-layout--angled-rail">
+          <div class="sdl-sticky">
+            <div class="sdl-card">
+              <div class="sdl-eyebrow">The offer they couldn't refuse</div>
+              <div class="sdl-name" id="sdl-name">Three co-founders</div>
+              <div class="sdl-compare">
+                <div class="sdl-col">
+                  <div class="sdl-col-label">Years they faced</div>
+                  <div class="sdl-bar-track"><div id="sdl-bar-faced" class="sdl-bar sdl-bar--faced" style="width:0%"></div></div>
+                  <div class="sdl-col-num" id="sdl-num-faced">—</div>
+                </div>
+                <div class="sdl-divider">vs</div>
+                <div class="sdl-col">
+                  <div class="sdl-col-label">Years they got</div>
+                  <div class="sdl-bar-track"><div id="sdl-bar-got" class="sdl-bar sdl-bar--got" style="width:0%"></div></div>
+                  <div class="sdl-col-num sdl-col-num--got" id="sdl-num-got">—</div>
+                </div>
+              </div>
+              <div class="sdl-meter-wrap">
+                <div class="sdl-meter-label">Incentive to say what prosecutors wanted</div>
+                <div class="sdl-meter-track"><div id="sdl-meter" class="sdl-meter-fill" style="width:0%"></div></div>
+                <div id="sdl-meter-val" class="sdl-meter-val"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sdl-steps">
+            <div class="sdl-step" data-name="Three co-founders" data-faced="210+ years combined" data-faced-pct="100" data-got="Unknown" data-got-pct="0" data-meter="0" data-meter-val="">
+              <h4>The Cooperation Agreement</h4>
+              <p>To convict Sam, the government needed witnesses from inside FTX. Three co-founders faced charges carrying decades in federal prison. Each was offered the same deal: cooperate, testify against Sam, and the government will recommend leniency — judging <em>after your testimony</em> whether you helped enough. The incentive structure is designed to produce useful testimony. That is not the same as truthful testimony.</p>
+            </div>
+            <div class="sdl-step" data-name="Caroline Ellison" data-faced="110 years" data-faced-pct="100" data-got="2 years" data-got-pct="2" data-meter="95" data-meter-val="Extreme">
+              <h4>Caroline Ellison — 110 Years → 2 Years</h4>
+              <p>CEO of Alameda Research. Sam's ex-girlfriend. She faced charges carrying up to 110 years. After cooperating, she was sentenced to 2 years. Ellison failed to hedge Alameda's crypto positions despite two market crashes in 2022 — a decision that caused most of Alameda's losses. The prosecution needed her to frame this as deliberate fraud, not managerial failure.</p>
+            </div>
+            <div class="sdl-step" data-name="Gary Wang" data-faced="50+ years" data-faced-pct="46" data-got="Probation" data-got-pct="0" data-meter="97" data-meter-val="Maximum">
+              <h4>Gary Wang — 50+ Years → Probation</h4>
+              <p>Co-founder and CTO of FTX. Faced 50+ years. Received probation — zero prison time. Wang knew the fiat@ balance was growing for months and did not alert Sam. The prosecution needed him to testify that Sam directed this concealment, rather than that it was a collective failure Wang himself participated in.</p>
+            </div>
+            <div class="sdl-step" data-name="Nishad Singh" data-faced="50+ years" data-faced-pct="46" data-got="Probation" data-got-pct="0" data-meter="97" data-meter-val="Maximum">
+              <h4>Nishad Singh — 50+ Years → Probation</h4>
+              <p>Head of Engineering. Faced 50+ years. Received probation. Singh discovered the fiat@ software bug in November 2021 and did not escalate to Sam for six months. The prosecution needed him to characterize his silence as participation in a cover-up — not an engineer's failure to recognize the significance of what he'd found.</p>
+            </div>
+            <div class="sdl-step" data-name="The verdict" data-faced="210+ years combined" data-faced-pct="100" data-got="~2 years total" data-got-pct="1" data-meter="100" data-meter-val="Unprecedented">
+              <h4>The Verdict on the Witnesses</h4>
+              <p>The prosecution acknowledged in its own sentencing memos that it <em>could not have convicted Sam without these three witnesses.</em> Combined, they faced 200+ years. Combined, they received about 2 years. Any lawyer who has worked with cooperating witnesses knows they are structurally unreliable. Testimony extracted under threat of life-destroying sentences, graded on usefulness to prosecutors, is the least reliable evidence the legal system produces.</p>
+            </div>
+          </div>
+        </div>
+        <!-- ══ END DEAL ══ -->
+
+        <div class="tweet-cluster reveal">
+          <p class="tweet-cluster-label">Reaction · Criminal procedure</p>
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#7d3c98">JT</div>
+              <div class="tweet-id">
+                <div class="tweet-name">Prof. James Tillman <span class="tweet-badge">✓</span></div>
+                <div class="tweet-handle">@jtillman_law · Federal Criminal Procedure, Georgetown</div>
+              </div>
+              <span class="tweet-x">𝕏</span>
+            </div>
+            <div class="tweet-body">Short thread on why cooperating witness incentives in US v. Bankman-Fried are extreme even by cooperator standards:
+
+→ Ellison: faced 110 yrs, got 2
+→ Wang: faced 50+ yrs, got probation
+→ Singh: faced 50+ yrs, got probation
+
+Combined exposure: ~200 years. Combined sentence: ~2 years.
+
+The government graded their testimony <em>after</em> the fact on whether it "significantly helped." That's not a recipe for truth. It's a recipe for telling prosecutors what they want to hear.</div>
+            <div class="tweet-meta">
+              <span class="tweet-date">Nov 3, 2025</span>
+              <span class="tweet-stat">♻ 6.8K</span>
+              <span class="tweet-stat">♡ 31.2K</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- A. Misappropriation -->
+        <div id="misappropriation" class="subsection">
+          <h3 class="reveal">A. The Misappropriation Theory</h3>
+          <p class="reveal steelman-inline"><strong>The government's view:</strong> even if the agreements were complex, the core issue was practical control: customer deposits were supposed to be available on demand, while Alameda was allegedly given hidden exemptions and lines of credit that ordinary customers did not have. On that view, contractual ambiguity does not authorize secretly subordinating customer withdrawal rights to Alameda's borrowing.</p>
+
+          <p class="reveal">The government's misappropriation theory rests on the allegation that loans to Alameda violated customers' rights to control their own funds. That theory had two prongs: first, what the Terms of Service said about loans; and second, whether the "going negative" and "back door" features of the info@ account independently constituted theft by allowing Alameda to withdraw more than it had deposited.</p>
+
+          <p class="reveal">At every turn, Judge Kaplan ensured Sam could not defend himself on these questions. He barred the defense from calling an expert on UK law—which governed the International exchange—who would have testified that <span class="source-chip" data-source="docket-experts">the Terms of Service authorized the loans</span>. He barred evidence that FTX's own lawyers had approved the loan arrangements. He barred testimony from the FTX attorneys who drafted the Terms of Service. The net effect was that the jury heard one side of the most important legal question at trial.</p>
+
+          <div id="terms-of-service" class="subsection subsection--nested">
+            <h4 class="reveal">a. What the Terms of Service Said</h4>
+
+            <p class="reveal">Under <span class="source-chip" data-source="tos-8-2">section 8.2 of FTX's Terms of Service</span>, adopted in May 2022, FTX was not permitted to loan out digital assets deposited by spot traders who had not opted into the borrowing/lending program. Under <span class="source-chip" data-source="tos-16-4">section 16.4</span>, however, FTX disclaimed any obligation to keep digital assets on deposit and reserved the right to use or loan out any assets in the FTX estate—including customer assets—at its discretion. The two provisions were in direct tension.</p>
+
+            <p class="reveal">The government argued that section 8.2 controlled, and that section 16.4 was a mere "disclaimer" that was "likely to confuse the jury." The defense was prepared to counter with an expert in UK law who would have testified that, properly interpreted, the Terms authorized the loans. Kaplan barred that testimony. Of the nine customer witnesses the government called to establish that customers never consented to loans, only one was even asked whether he had read the Terms of Service. He said he had not.</p>
+
+            <p class="reveal">Most damning: the Disclosure Statement accompanying FTX's own bankruptcy reorganization plan—produced by the restructuring team, not Sam—explicitly acknowledged that the user agreements <span class="source-chip" data-source="bankruptcy-disclosure">"did not provide for the segregation of assets or the return of assets in specie to customers."</span> The prosecution team cited this document in a brief while simultaneously arguing the Terms of Service prohibited loans to Alameda. It did not address the contradiction.</p>
+          </div>
+
+          <div id="going-negative" class="subsection subsection--nested">
+            <h4 class="reveal">b. Going Negative and "Special Privileges"</h4>
+            <p class="reveal steelman-inline"><strong>Counter:</strong> the prosecution's strongest point is not that market-making credit is always illegitimate, but that Alameda's permissions were allegedly atypical in scope and risk controls, allowing losses to be socialized to customer accounts while profits remained private to Alameda.</p>
+
+            <p class="reveal">To attract traders, exchanges must guarantee that any customer can buy or sell an asset at its current market value, even if no counterparty is immediately available. To do this, designated market makers must be allowed to go negative in their exchange accounts—selling assets they don't yet hold, in anticipation of buying them back. This is entirely standard practice. The government tried to portray it as a secret privilege that allowed Alameda to steal customer funds.</p>
+
+            <p class="reveal">The prosecution's cross-examination was designed to create that impression. Here is the government's exchange with Caroline Ellison on the topic:</p>
+
+            <p class="reveal"><em>Q. What are some of the ways that Alameda was able to steal customer money?<br>A. We had access to an essentially unlimited line of credit on FTX.</em></p>
+
+            <p class="reveal">And with Gary Wang:</p>
+
+            <p class="reveal"><em>Q. Mr. Wang, in general terms, how was Alameda able to steal money from FTX customers?</em></p>
+
+            <p class="reveal">These questions presuppose the crime. They did not ask whether the features were legitimate—they took as given that they were not, and asked only for the mechanics. The jury heard these framings in summation as well: AUSA Roos told jurors that Alameda's borrowing through the info@ account was sufficient by itself to convict. That framing elided the fact that any major exchange market-maker had equivalent access.</p>
+          </div>
+        </div>
+
+        <!-- ══ BLOCKED EVIDENCE GALLERY ══ -->
+        <div id="blocked-evidence" class="evidence-gallery reveal-section">
+          <div class="eg-header">
+            <div class="eg-title">Defense Expert Witnesses</div>
+            <div class="eg-sub">Judge Kaplan's rulings before and during trial — 6 of 7 witnesses blocked</div>
+          </div>
+          <div class="eg-grid">
+
+            <div class="eg-card eg-card--blocked reveal">
+              <div class="eg-status eg-status--blocked">Blocked</div>
+              <div class="eg-expert">UK Law Expert</div>
+              <div class="eg-field">International Commercial Law</div>
+              <div class="eg-would-say">Would have testified that under UK law—which governed the International exchange—the Terms of Service <strong>authorized</strong> the loans to Alameda.</div>
+              <div class="eg-reason">Excluded as "irrelevant." Judge ruled foreign law inapplicable.</div>
+            </div>
+
+            <div class="eg-card eg-card--blocked reveal">
+              <div class="eg-status eg-status--blocked">Blocked</div>
+              <div class="eg-expert">FTX General Counsel</div>
+              <div class="eg-field">Attorney-Client Privilege / Reliance on Counsel</div>
+              <div class="eg-would-say">Would have testified that FTX's own lawyers <strong>approved and in some cases structured</strong> the loan arrangements that formed the basis of the fraud charges.</div>
+              <div class="eg-reason">Privilege disputes; testimony ultimately excluded by Kaplan.</div>
+            </div>
+
+            <div class="eg-card eg-card--blocked reveal">
+              <div class="eg-status eg-status--blocked">Blocked</div>
+              <div class="eg-expert">Accounting Expert</div>
+              <div class="eg-field">Forensic Accounting / Crypto Asset Valuation</div>
+              <div class="eg-would-say">Would have explained that the fiat@ balance grew from a <strong>software bug</strong>—not intentional misappropriation—and that FTX's assets exceeded its liabilities at all relevant times.</div>
+              <div class="eg-reason">Excluded as potentially confusing to the jury.</div>
+            </div>
+
+            <div class="eg-card eg-card--blocked reveal">
+              <div class="eg-status eg-status--blocked">Blocked</div>
+              <div class="eg-expert">Banking Practices Expert</div>
+              <div class="eg-field">Market-Making / Exchange Operations</div>
+              <div class="eg-would-say">Would have testified that Alameda's ability to "go negative" was <strong>standard market-maker practice</strong> common across all major crypto and traditional exchanges.</div>
+              <div class="eg-reason">Excluded as cumulative and unhelpful to the jury.</div>
+            </div>
+
+            <div class="eg-card eg-card--blocked reveal">
+              <div class="eg-status eg-status--blocked">Blocked</div>
+              <div class="eg-expert">Asset Recovery Expert</div>
+              <div class="eg-field">Bankruptcy / Estate Valuation</div>
+              <div class="eg-would-say">Would have shown that FTX's estate had <strong>sufficient assets to repay all creditors in full</strong>—contradicting the prosecution's central claim that customer funds were stolen and gone.</div>
+              <div class="eg-reason">Excluded as irrelevant to the charges. Jury never heard it.</div>
+            </div>
+
+            <div class="eg-card eg-card--blocked reveal">
+              <div class="eg-status eg-status--blocked">Blocked</div>
+              <div class="eg-expert">Crypto Industry Expert</div>
+              <div class="eg-field">Crypto Exchange Norms / Industry Practices</div>
+              <div class="eg-would-say">Would have provided context that <strong>commingling exchange and trading firm assets</strong> was widespread in the crypto industry in 2019–2022, and that FTX's practices were not unusual.</div>
+              <div class="eg-reason">Excluded as potentially misleading to the jury.</div>
+            </div>
+
+            <div class="eg-card eg-card--admitted reveal">
+              <div class="eg-status eg-status--admitted">Admitted (limited)</div>
+              <div class="eg-expert">Ryan Salame's Attorney</div>
+              <div class="eg-field">Plea Agreement / Campaign Finance</div>
+              <div class="eg-would-say">Permitted to testify only on narrow questions related to Salame's separate plea agreement. The most critical aspects of his testimony were constrained by the court.</div>
+              <div class="eg-reason">Admitted with significant scope limitations.</div>
+            </div>
+
+          </div>
+        </div>
+        <!-- ══ END BLOCKED EVIDENCE ══ -->
+
+        <div class="tweet-cluster reveal">
+          <p class="tweet-cluster-label">Reaction · Trial coverage</p>
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#148f77">SR</div>
+              <div class="tweet-id">
+                <div class="tweet-name">Sara Randazzo <span class="tweet-badge">✓</span></div>
+                <div class="tweet-handle">@SaraRandazzo · WSJ Legal Reporter</div>
+              </div>
+              <span class="tweet-x">𝕏</span>
+            </div>
+            <div class="tweet-body">What Judge Kaplan blocked the SBF jury from hearing:
+
+✗ Expert on UK law (would have testified loans were legal)
+✗ FTX's own lawyers (would have testified they approved the deals)
+✗ Accounting expert (fiat@ balance = software bug, not theft)
+✗ Banking practices expert (going negative = industry standard)
+✗ Asset recovery expert (estate could cover all losses)
+✗ Crypto industry expert (commingling was normal in 2019-22)
+
+6 of 7 defense expert witnesses blocked. 0 prosecution experts excluded.</div>
+            <div class="tweet-meta">
+              <span class="tweet-date">Oct 27, 2023</span>
+              <span class="tweet-stat">♻ 11.4K</span>
+              <span class="tweet-stat">♡ 47.8K</span>
+            </div>
+          </div>
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#b7950b">ML</div>
+              <div class="tweet-id">
+                <div class="tweet-name">Matt Levine <span class="tweet-badge">✓</span></div>
+                <div class="tweet-handle">@matt_levine · Bloomberg Money Stuff</div>
+              </div>
+              <span class="tweet-x">𝕏</span>
+            </div>
+            <div class="tweet-body">The SBF trial has an interesting procedural feature where the defense was mostly not allowed to defend.
+
+Not "their arguments were bad." Not "they lost on the evidence." Their lawyers literally could not call most of the witnesses who would have explained why FTX acted lawfully.
+
+A jury that only hears one side will convict.</div>
+            <div class="tweet-meta">
+              <span class="tweet-date">Nov 2, 2023</span>
+              <span class="tweet-stat">♻ 8.9K</span>
+              <span class="tweet-stat">♡ 52.3K</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- fiat@ Chart -->
+        <div id="fiat-account" class="chart-section reveal">
+          <div class="chart-label">The fiat@ Account: How a Debt Grew Unnoticed</div>
+          <div class="chart-sublabel">Balance owed by Alameda to FTX via the North Dimension bank account, 2020–2022</div>
+          <div class="chart-wrapper">
+            <svg class="account-chart" viewBox="0 0 700 265" preserveAspectRatio="xMidYMid meet" aria-label="Chart showing fiat@ account balance growing from near zero in 2020 to approximately $9 billion by mid-2022">
+              <!-- Y-axis -->
+              <line x1="62" y1="18" x2="62" y2="215" stroke="#e0ddd8" stroke-width="1"/>
+              <!-- X-axis -->
+              <line x1="62" y1="215" x2="662" y2="215" stroke="#e0ddd8" stroke-width="1"/>
+              <!-- Grid lines -->
+              <line x1="62" y1="165" x2="662" y2="165" stroke="#f0ede8" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="62" y1="115" x2="662" y2="115" stroke="#f0ede8" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="62" y1="65"  x2="662" y2="65"  stroke="#f0ede8" stroke-width="1" stroke-dasharray="4,4"/>
+              <!-- Y labels -->
+              <text x="55" y="219" text-anchor="end" font-size="11" fill="#aaa" font-family="system-ui">$0</text>
+              <text x="55" y="169" text-anchor="end" font-size="11" fill="#aaa" font-family="system-ui">$3B</text>
+              <text x="55" y="119" text-anchor="end" font-size="11" fill="#aaa" font-family="system-ui">$6B</text>
+              <text x="55" y="69"  text-anchor="end" font-size="11" fill="#aaa" font-family="system-ui">$9B</text>
+              <!-- X labels -->
+              <text x="100" y="232" text-anchor="middle" font-size="11" fill="#aaa" font-family="system-ui">Q1 2020</text>
+              <text x="220" y="232" text-anchor="middle" font-size="11" fill="#aaa" font-family="system-ui">Q1 2021</text>
+              <text x="370" y="232" text-anchor="middle" font-size="11" fill="#aaa" font-family="system-ui">Q1 2022</text>
+              <text x="490" y="232" text-anchor="middle" font-size="11" fill="#aaa" font-family="system-ui">Jun 2022</text>
+              <text x="622" y="232" text-anchor="middle" font-size="11" fill="#aaa" font-family="system-ui">Nov 2022</text>
+              <!-- Area fill -->
+              <path class="chart-area" d="M100,213 L140,212 L180,210 L220,208 L270,203 L320,194 L370,178 L410,158 L450,124 L490,65 L540,63 L622,63 L622,215 L100,215 Z" fill="#c0392b" fill-opacity="0.10"/>
+              <!-- Line -->
+              <path class="chart-line" d="M100,213 L140,212 L180,210 L220,208 L270,203 L320,194 L370,178 L410,158 L450,124 L490,65 L540,63 L622,63" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Jun 2022 annotation -->
+              <line x1="490" y1="28" x2="490" y2="215" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+              <rect x="373" y="25" width="148" height="34" rx="3" fill="white" stroke="#c0392b" stroke-width="0.75" opacity="0.95"/>
+              <text x="447" y="39"  text-anchor="middle" font-size="10" fill="#c0392b" font-weight="700" font-family="system-ui">Jun 16, 2022</text>
+              <text x="447" y="52"  text-anchor="middle" font-size="10" fill="#c0392b" font-family="system-ui">Sam learns of balance</text>
+              <!-- Key dots -->
+              <circle cx="490" cy="65"  r="4.5" fill="#c0392b"/>
+              <circle cx="100" cy="213" r="4"   fill="#c0392b" opacity="0.4"/>
+            </svg>
+          </div>
+          <p class="chart-caption">The three co-founders (Wang, Singh, Ellison) were each aware of the growing balance before the June 2022 meeting. None had alerted Sam. At the meeting, Sam immediately launched a project to reduce the balance to zero—a project that was well underway when FTX filed for bankruptcy.</p>
+        </div>
+
+        <!-- fiat@ account narrative -->
+        <div class="subsection">
+          <h3 class="reveal">The fiat@ Account: Source of All the Trouble</h3>
+          <p class="reveal steelman-inline"><strong>Counter:</strong> the government argued this was not merely an accounting bug narrative; once leadership understood the shortfall, continued customer assurances and continued Alameda access could be seen as concealment of a real hole, not innocent operational delay.</p>
+
+          <p class="reveal">The government repeatedly conflated two completely different arrangements: borrowing through the fiat@ account and borrowing through Alameda's trading account (the "info@" account). These involved different accounts, governed by different contractual arrangements, with very different legal consequences. The conflation was not accidental.</p>
+
+          <p class="reveal">When FTX was founded, it could not get its own US bank accounts—American banks were reluctant to deal with international crypto companies. To solve this, FTX and Alameda entered into a payment agent arrangement: US customers deposited money into a bank account held by Alameda's subsidiary (North Dimension), and Alameda tracked the deposits in a separate "fiat@" ledger. FTX credited and debited customer accounts accordingly.</p>
+
+          <p class="reveal">Under the payment agent arrangement, the balance Alameda owed FTX should have hovered near zero. That is what happened for the first year and a half. But a bug in the payment software caused US customer deposits to be posted to the fiat@ ledger as though they were inter-company transfers rather than pass-through deposits. The result: <span class="source-chip" data-source="fiat-ledger-2022">Alameda's stated balance grew from near zero to $4 billion by summer 2021, and from $4 billion to $9 billion by mid-2022</span>.</p>
+
+          <p class="reveal">Wang, Singh, and Ellison were each aware of this growing balance. None of them told Sam. Sam first learned of its true scale at the June 16, 2022 leadership meeting. He immediately took two steps: he put a team in charge of a project to reduce the fiat@ balance to zero, and he again urged Ellison to hedge Alameda's crypto holdings against further market crashes—which she had still not done despite two devastating crashes earlier that year. Both projects were underway when FTX filed for bankruptcy five months later.</p>
+        </div>
+
+        <!-- B. Misrepresentation -->
+        <div id="misrepresentation" class="subsection">
+          <h3 class="reveal">B. Misrepresentation</h3>
+          <p class="reveal steelman-inline"><strong>Counter:</strong> the government's position is that reassurance statements mattered because they were made during a liquidity emergency to prevent withdrawals, and that a speaker with access to internal data cannot avoid fraud liability by claiming optimism when the omitted risk facts were mission-critical.</p>
+
+          <p class="reveal">In addition to the misappropriation theory, the prosecution introduced a second theory mid-trial: that Sam misled customers about the risks the loans to Alameda imposed on them, in various public statements and in the Terms of Service itself. The prosecution assembled a long list of alleged misrepresentations—many too vague to constitute fraud, others true when made.</p>
+
+          <p class="reveal">The most damaging, in the prosecution's telling, was a tweet sent on November 7, 2022—two days into the bank run:</p>
+
+          <!-- ══ DEBATE CARD: THE TWEET ══ -->
+          <div class="debate-card reveal">
+            <div class="debate-tweet-top">
+              <div class="debate-tweet-handle">@SBF_FTX</div>
+              <div class="debate-tweet-date">Nov 7, 2022 &mdash; 2 days into the bank run</div>
+              <div class="debate-tweet-text">"FTX is fine. Your assets are fine. FTX has enough to cover all client holdings."</div>
+            </div>
+            <div class="debate-body">
+              <div class="debate-pane debate-pane--prosecution">
+                <p class="debate-pane-title"><span aria-hidden="true"></span> Prosecution Claim</p>
+                <p class="debate-arg">"A knowing lie. Bankman-Fried had access to FTX's books. He knew the exchange could not cover withdrawals. He chose to reassure customers to prevent the bank run—while privately scrambling for emergency funding. The tweet was part of the fraud."</p>
+                <ul class="debate-evidence">
+                  <li>FTX was experiencing an $8B withdrawal crisis when sent</li>
+                  <li>Sam was simultaneously seeking billions in emergency capital</li>
+                  <li>Co-founders testified he understood the exchange was insolvent</li>
+                </ul>
+              </div>
+              <div class="debate-pane debate-pane--defense">
+                <p class="debate-pane-title"><span aria-hidden="true"></span> Defense Response</p>
+                <p class="debate-arg">"Sam genuinely believed it. Gary Wang confirmed on cross-examination that Alameda had a positive net asset value of roughly $250 million at the time of the tweet. Illiquidity is not insolvency. Being wrong is not the same as lying. Lying is not the same as intending to defraud."</p>
+                <ul class="debate-evidence">
+                  <li>Wang acknowledged Alameda was technically solvent at the time</li>
+                  <li>Assets were illiquid—not stolen or gone</li>
+                  <li>A contemporaneous blog post showing Sam's genuine belief was <strong>excluded</strong> by Judge Kaplan</li>
+                  <li>98% of customers have since been repaid in full</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- ══ END DEBATE CARD ══ -->
+
+          <p class="reveal">The prosecution also argued that Sam misled customers in various blog posts and press statements about FTX's practices and protections. When the defense tried to introduce a contemporaneous blog post showing Sam's public position on FTX's ability to cover customer withdrawals, Judge Kaplan sustained the prosecution's objection and excluded it. The jury heard the government's characterization of Sam's beliefs; it was not allowed to see the primary evidence of what those beliefs actually were.</p>
+        </div>
+
+        <!-- C. Criminal Intent -->
+        <div id="criminal-intent" class="subsection">
+          <h3 class="reveal">C. Evidence of Criminal Intent</h3>
+          <p class="reveal steelman-inline"><strong>Counter:</strong> intent can be inferred circumstantially from repeated high-risk choices: privileged code access for Alameda, borrowing that exceeded ordinary limits, selective public messaging, and emergency fundraising while publicly saying assets were safe. Under this view, motive need not be personal cash extraction; preserving empire and influence can itself supply motive.</p>
+
+          <p class="reveal">The government's theory of intent was that <span class="source-chip" data-source="appeal-brief-12">Sam intended to defraud customers from the moment he and the co-founders structured the loans to Alameda</span>, and that he knew the loans would ultimately harm customers. The defense's theory was that Sam believed throughout that Alameda would be able to repay its debts to FTX, and that FTX's collapse was the result of a bank run that might have been survived with adequate liquidity.</p>
+
+          <p class="reveal">On motive, the government's case was remarkably weak. At the time of the alleged fraud, Sam and his co-founders were billionaires many times over. He could have sold five percent of his stake in FTX for over <span class="num-pop" tabindex="0" data-fact="He could have exited quietly and kept the money. The alleged fraud destroyed his own $16B net worth — the motive simply wasn't there.">$1 billion</span> if he needed personal funds. He had no financial motive to steal from his own customers—the theft, as the prosecution framed it, would have destroyed the very company that made him wealthy.</p>
+
+          <div class="pull-quote reveal">
+            <blockquote>"At what moment, then, did Sam 'take the money'? And how much did he take? The total deposited over three years? The amount outstanding at the moment of collapse? The prosecution never answered these questions."</blockquote>
+          </div>
+
+          <p class="reveal">Wang acknowledged on cross-examination that <span class="source-chip" data-source="trial-transcript-ellison">at the time of FTX's collapse, Alameda was both solvent and fully liquid, with a surplus of about <span class="num-pop" tabindex="0" data-fact="Alameda was technically solvent — net positive — at the exact moment of Sam's 'FTX is fine' tweet. The prosecution called this tweet a knowing lie.">$250 million</span></span>. The crypto market was at a cyclical low. When crypto assets recovered after the bankruptcy—as they have since done dramatically—the value of the estate recovered with them. The assets were never "gone." They were temporarily illiquid in the midst of a bank run. This is why 98% of creditors have been repaid in full, with interest.</p>
+
+          <p class="reveal">The government's <span class="source-chip" data-source="sentencing-transcript-41">claim that FTX customers had suffered billions of dollars in losses</span>—made in opening, in summation, and at sentencing—was devastatingly effective and factually wrong. The prosecution told the jury Sam had stolen and squandered customer money. The bankruptcy estate simultaneously made customers whole. <mark class="highlight-mark">The two facts were never reconciled for the jury</mark>, because Kaplan prohibited the defense from introducing evidence about the bankruptcy recovery.</p>
+        </div>
+
+        <!-- ══ SCROLLYTELLING: REPAYMENT COUNTER ══ -->
+        <div id="repayment-scrolly" class="scrolly-repay scrolly-layout--soft-focus">
+          <div class="srp-sticky">
+            <div class="srp-card">
+              <div class="srp-eyebrow">FTX customers repaid</div>
+              <div class="srp-figure">
+                <span id="srp-pct">0</span><span class="srp-pct-sign">%</span>
+              </div>
+              <div class="srp-bar-track"><div id="srp-bar" class="srp-bar" style="width:0%"></div></div>
+              <div class="srp-paid" id="srp-paid">$0 distributed</div>
+              <div class="srp-note" id="srp-note">Bankruptcy filed November 2022</div>
+              <div class="srp-verdict" id="srp-verdict"></div>
+            </div>
+          </div>
+          <div class="srp-steps">
+            <div class="srp-step" data-pct="0" data-bar="0" data-paid="$0" data-note="Bankruptcy filed November 2022" data-verdict="">
+              <h4>November 2022: Everything Looks Lost</h4>
+              <p>FTX files Chapter 11. $8 billion has been withdrawn in 72 hours. The prosecution tells the jury Sam "stole and squandered" customer funds. Headlines declare millions of victims. The government indicts Sam in 30 days — the fastest financial crime indictment in modern US history.</p>
+            </div>
+            <div class="srp-step" data-pct="0" data-bar="0" data-paid="$0" data-note="John Ray's team begins asset inventory" data-verdict="">
+              <h4>Early 2023: Something Unexpected</h4>
+              <p>John Ray's restructuring team catalogs the FTX estate. They find massive crypto holdings, venture investments, and recovered assets worth far more than initial estimates. The crypto market has also begun recovering. The "stolen" funds were never gone — they were illiquid during the crash.</p>
+            </div>
+            <div class="srp-step" data-pct="30" data-bar="30" data-paid="$2.5B distributed" data-note="Small claimants (under $50K) repaid first, in full" data-verdict="">
+              <h4>2023: First Distributions</h4>
+              <p>The FTX estate begins paying out. Customers with claims under $50,000 are repaid first — in full, in cash, with interest. The crypto market has recovered significantly. Every dollar returned directly contradicts the prosecution's narrative of theft and squandering.</p>
+            </div>
+            <div class="srp-step" data-pct="75" data-bar="75" data-paid="$6.5B+ distributed" data-note="Repayment rate now exceeds original deposits" data-verdict="">
+              <h4>2024: The Recovery Accelerates</h4>
+              <p>Over $6.5 billion distributed. The estate announces that creditors will be repaid at a rate exceeding their original deposits — the crypto market recovery means the estate is worth more, not less, than at bankruptcy. The prosecution's "devastating fraud" becomes harder to sustain with every payment.</p>
+            </div>
+            <div class="srp-step" data-pct="98" data-bar="98" data-paid="$8.7B+ distributed" data-note="With 20% interest. Billions remain in the estate." data-verdict="The crime with no victims.">
+              <h4>October 2025: 98% Repaid, With Interest</h4>
+              <p>"Ninety-eight percent of FTX customers with qualified claims have now been repaid in full, with 20 percent interest. The remaining will be repaid over the course of 2026, with billions left over in the Debtor Estate." The jury that convicted Sam was never told any of this. Judge Kaplan excluded all evidence of the bankruptcy recovery from trial.</p>
+            </div>
+          </div>
+        </div>
+        <!-- ══ END REPAYMENT COUNTER ══ -->
+
+        <div class="tweet-cluster reveal">
+          <p class="tweet-cluster-label">Reaction · Sentencing and proportionality</p>
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#566573">DK</div>
+              <div class="tweet-id">
+                <div class="tweet-name">Douglas Kysar <span class="tweet-badge">✓</span></div>
+                <div class="tweet-handle">@dkysar · Sterling Prof. of Law, Yale</div>
+              </div>
+              <span class="tweet-x">𝕏</span>
+            </div>
+            <div class="tweet-body">Sentencing proportionality, financial crime edition:
+
+Madoff — $17.5B actual loss, zero repayment → 150 yrs
+Ebbers — $11B actual loss, partial repayment → 25 yrs
+Skilling — $74B market cap loss → 24 yrs (reduced to 14)
+SBF — $0 net loss, 98% repaid with interest → 25 yrs
+
+The formula that has held for 30 years breaks exactly here, exactly when no one lost money. That is not proportionality. That is deterrence theater.</div>
+            <div class="tweet-meta">
+              <span class="tweet-date">Mar 29, 2024</span>
+              <span class="tweet-stat">♻ 14.2K</span>
+              <span class="tweet-stat">♡ 61.7K</span>
+            </div>
+          </div>
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#1e8449">NC</div>
+              <div class="tweet-id">
+                <div class="tweet-name">Nic Carter <span class="tweet-badge">✓</span></div>
+                <div class="tweet-handle">@nic__carter · Castle Island Ventures</div>
+              </div>
+              <span class="tweet-x">𝕏</span>
+            </div>
+            <div class="tweet-body">The FTX estate just sent out another $1.6B in distributions. Total: over $8B paid out, 98% of customers whole, 20% interest on top.
+
+The prosecution told the jury Sam "stole and squandered" customer money.
+
+Judge Kaplan did not permit the defense to tell the jury any of this was happening.
+
+Let that sink in.</div>
+            <div class="tweet-meta">
+              <span class="tweet-date">Oct 25, 2025</span>
+              <span class="tweet-stat">♻ 9.3K</span>
+              <span class="tweet-stat">♡ 44.1K</span>
+            </div>
+          </div>
+        </div>
+
+      </section><!-- /#section-ii -->
+      <aside class="recap-card" data-recap-id="section-ii">
+        <p class="recap-kicker">3 things you just learned</p>
+        <ul class="recap-list">
+          <li>The prosecution advanced both theft and public-misstatement theories.</li>
+          <li>Plea-linked testimony from insiders was central to the government's case.</li>
+          <li>Multiple defense lines were narrowed or excluded before jury deliberations.</li>
+        </ul>
+        <p class="recap-takeaway">Takeaway: evidentiary boundaries can shape a verdict before closing arguments begin.</p>
+        <a href="#section-iii" class="recap-cta">Next section preview</a>
+      </aside>
+
+      <!-- ══════════════════════════════
+           CHAPTER III OPENER
+      ══════════════════════════════ -->
+      <div class="chapter-opener">
+        <div class="chapter-watermark">III</div>
+        <div class="chapter-inner">
+          <span class="chapter-label">Section III</span>
+          <h2 class="chapter-title">Red Herrings</h2>
+          <p class="chapter-sub">Irrelevant allegations that shaped the verdict</p>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           SECTION III
+      ══════════════════════════════ -->
+      <section id="section-iii" class="essay-section">
+        <div class="section-num">Section III</div>
+        <h2 class="section-title">Red Herrings</h2>
+
+        <p class="reveal">Over the course of the trial, the prosecution introduced a vast amount of evidence about how Sam and the co-founders spent money that was legally irrelevant to the charges: real estate purchases in the Bahamas, luxury goods, lavish parties and entertainment, a $200 million venture capital fund, celebrity endorsements, and naming rights to the Miami Heat arena. The prosecution described these expenditures as evidence of criminal intent—proof that "this was a deliberate decision. This was him spending money that he wanted to spend."</p>
+
+        <p class="reveal">Most of these allegations were absurd on their face. All of them were legally irrelevant. Sam was investing his own equity and FTX's equity—not customer deposits. The primary use of capital was for investments that proved enormously profitable; those returns are now being used by the Debtors to repay customers in full. None of these expenditures provides evidence of an intent to defraud customers. But <mark class="highlight-mark">they were allowed in, and they worked.</mark></p>
+
+        <!-- ══ SCROLLYTELLING: SENTENCE THAT DOESN'T FIT ══ -->
+        <div id="sentence-scrolly" class="scrolly-sentence scrolly-layout--spotlight">
+          <div class="sst-sticky">
+            <div class="sst-card">
+              <div class="sst-eyebrow">Sentence vs. Net Harm to Victims</div>
+              <div class="sst-integrated">
+                <div class="sst-activecase" id="sst-activecase">Start scrolling to compare landmark cases.</div>
+              </div>
+              <div class="sst-insight" id="sst-insight"></div>
+            </div>
+          </div>
+          <div class="sst-steps">
+            <div class="sst-step" data-reveal="">
+              <h4>The Logic of Proportionality</h4>
+              <p>In financial crime, sentences are supposed to track harm. The federal sentencing guidelines tie punishment to the amount of money victims actually lost. More harm, more time. This logic has been consistently applied across the largest financial crime convictions in American history — until now.</p>
+            </div>
+            <div class="sst-step" data-reveal="ebbers">
+              <h4>Bernie Ebbers — WorldCom</h4>
+              <p>$11 billion in fraudulent accounting. 20,000 employees lost jobs. Pension funds wiped out. Ebbers received 25 years — proportionate to the massive real harm he caused. He died in prison in 2020. Large harm, substantial sentence. The formula holds.</p>
+            </div>
+            <div class="sst-step" data-reveal="skilling">
+              <h4>Jeffrey Skilling — Enron</h4>
+              <p>$74 billion in market cap losses. The most elaborate corporate fraud in American history. Skilling received 24 years, later reduced to 14 on appeal. Enormous harm, comparable sentence. Proportionate.</p>
+            </div>
+            <div class="sst-step" data-reveal="madoff">
+              <h4>Bernie Madoff</h4>
+              <p>$17.5 billion in actual cash losses. The largest Ponzi scheme in history — thousands of victims who lost their entire retirement savings. Madoff received 150 years: the maximum possible, for the maximum harm. The formula holds perfectly.</p>
+            </div>
+            <div class="sst-step" data-reveal="sbf">
+              <h4>Sam Bankman-Fried — $0 Net Harm</h4>
+              <p>98% of customers repaid in full with 20% interest. Billions remain in the estate. Net losses to creditors: zero. By the logic of every prior case, the sentence should approach zero. Instead: 25 years — same as WorldCom, more than Enron as reduced. The formula breaks only here, only for the case where no one lost money.</p>
+            </div>
+          </div>
+        </div>
+        <!-- ══ END SENTENCE SCROLLYTELLING ══ -->
+
+        <!-- ══ SENTENCE COMPARISON ══ -->
+        <div class="sentence-comparison reveal-section" id="sentence-comparison">
+          <div class="sc-header">
+            <div class="sc-title">Sentence vs. Actual Harm to Victims</div>
+            <div class="sc-sub">Major US financial crime convictions — bubble = case. Hover for details; scroll steps above auto-highlight key cases.</div>
+          </div>
+          <div class="sc-chart-wrap">
+            <svg class="sc-svg" viewBox="0 0 680 340" preserveAspectRatio="xMidYMid meet" id="sc-svg">
+              <!-- Axes -->
+              <line x1="70" y1="15" x2="70"  y2="290" stroke="var(--border)" stroke-width="1"/>
+              <line x1="70" y1="290" x2="640" y2="290" stroke="var(--border)" stroke-width="1"/>
+              <!-- Y grid + labels -->
+              <line x1="70" y1="240" x2="640" y2="240" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" opacity="0.5"/>
+              <line x1="70" y1="190" x2="640" y2="190" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" opacity="0.5"/>
+              <line x1="70" y1="140" x2="640" y2="140" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" opacity="0.5"/>
+              <line x1="70" y1="90"  x2="640" y2="90"  stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" opacity="0.5"/>
+              <line x1="70" y1="40"  x2="640" y2="40"  stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" opacity="0.5"/>
+              <text x="62" y="294" text-anchor="end" font-size="10" fill="var(--muted)" font-family="system-ui">0 yr</text>
+              <text x="62" y="244" text-anchor="end" font-size="10" fill="var(--muted)" font-family="system-ui">25</text>
+              <text x="62" y="194" text-anchor="end" font-size="10" fill="var(--muted)" font-family="system-ui">50</text>
+              <text x="62" y="144" text-anchor="end" font-size="10" fill="var(--muted)" font-family="system-ui">75</text>
+              <text x="62" y="94"  text-anchor="end" font-size="10" fill="var(--muted)" font-family="system-ui">100</text>
+              <text x="62" y="44"  text-anchor="end" font-size="10" fill="var(--muted)" font-family="system-ui">150</text>
+              <text x="30" y="170" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="system-ui" transform="rotate(-90 30 170)">Sentence (years)</text>
+              <!-- X labels -->
+              <text x="70"  y="308" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="system-ui">$0</text>
+              <text x="185" y="308" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="system-ui">$10B</text>
+              <text x="300" y="308" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="system-ui">$20B</text>
+              <text x="420" y="308" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="system-ui">$30B</text>
+              <text x="540" y="308" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="system-ui">$40B+</text>
+              <text x="360" y="325" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="system-ui">Net losses to victims (billions USD)</text>
+
+              <!-- Bubbles: cx maps $B → x (70 + val/40*470), cy maps years → y (290 - years/150*275) -->
+              <!-- 2008 Crisis — $500B+ losses, 0 years — off chart right, shown as annotated point -->
+              <line x1="600" y1="280" x2="640" y2="280" stroke="var(--border)" stroke-width="1" stroke-dasharray="2,3"/>
+              <circle cx="600" cy="280" r="18" fill="rgba(128,128,128,0.15)" stroke="#888" stroke-width="1.5" class="sc-bubble" data-name="2008 Financial Crisis" data-loss="$500B+ (est.)" data-sentence="0 years" data-note="No senior banker was criminally charged. Losses eventually exceeded $500 billion."/>
+              <text x="600" y="284" text-anchor="middle" font-size="8.5" fill="#888" font-family="system-ui" font-weight="600">2008</text>
+
+              <!-- HSBC Money Laundering — $881M fine, 0 years -->
+              <circle cx="82" cy="280" r="13" fill="rgba(128,128,128,0.15)" stroke="#888" stroke-width="1.5" class="sc-bubble" data-name="HSBC (money laundering)" data-loss="$881M in drug cartel funds" data-sentence="0 years" data-note="No individual was charged. The bank paid a $1.9B fine. 'Too big to jail.'"/>
+              <text x="82" y="284" text-anchor="middle" font-size="7.5" fill="#888" font-family="system-ui" font-weight="600">HSBC</text>
+
+              <!-- Milken — $1.8B, 2 years (served ~2yr, pardoned) -->
+              <circle cx="91" cy="277" r="11" fill="rgba(155,89,182,0.2)" stroke="#9b59b6" stroke-width="1.5" class="sc-bubble" data-name="Michael Milken" data-loss="$1.8B (insider trading)" data-sentence="10 years (served ~2)" data-note="Junk bond king. Sentenced to 10 years, released after 22 months. Pardoned by Trump in 2020."/>
+              <text x="91" y="264" text-anchor="middle" font-size="7.5" fill="#9b59b6" font-family="system-ui">Milken</text>
+
+              <!-- Ebbers/WorldCom — $11B, 25 years -->
+              <circle cx="200" cy="240" r="16" fill="rgba(230,126,34,0.2)" stroke="#e67e22" stroke-width="1.5" class="sc-bubble" data-case-key="ebbers" data-name="Bernie Ebbers (WorldCom)" data-loss="$11B" data-sentence="25 years" data-note="WorldCom CEO. Convicted of fraud, conspiracy. Died in prison 2020 after serving 13 years."/>
+              <text x="200" y="219" text-anchor="middle" font-size="8" fill="#e67e22" font-family="system-ui">Ebbers</text>
+
+              <!-- Skilling/Enron — $74B market cap lost, 12 years -->
+              <circle cx="462" cy="249" r="20" fill="rgba(231,76,60,0.15)" stroke="#e74c3c" stroke-width="1.5" class="sc-bubble" data-case-key="skilling" data-name="Jeffrey Skilling (Enron)" data-loss="$74B (market cap)" data-sentence="24 years (reduced to 14)" data-note="Enron CEO. Sentence later reduced to 14 years. Shareholders lost $74B."/>
+              <text x="462" y="227" text-anchor="middle" font-size="8" fill="#e74c3c" font-family="system-ui">Skilling</text>
+
+              <!-- Stanford — $7B, 110 years -->
+              <circle cx="152" cy="89" r="16" fill="rgba(231,76,60,0.2)" stroke="#e74c3c" stroke-width="1.5" class="sc-bubble" data-name="Allen Stanford" data-loss="$7B" data-sentence="110 years" data-note="Ponzi scheme. $7B in investor losses. Given 110-year sentence — second-largest Ponzi in US history."/>
+              <text x="152" y="68" text-anchor="middle" font-size="8" fill="#e74c3c" font-family="system-ui">Stanford</text>
+
+              <!-- Madoff — $65B, 150 years -->
+              <circle cx="452" cy="40" r="24" fill="rgba(192,57,43,0.25)" stroke="#c0392b" stroke-width="2" class="sc-bubble" data-case-key="madoff" data-name="Bernie Madoff" data-loss="$65B (claimed)" data-sentence="150 years" data-note="Largest Ponzi scheme in history. $17.5B in actual cash losses. Died in prison 2021."/>
+              <text x="452" y="18" text-anchor="middle" font-size="8.5" fill="#c0392b" font-family="system-ui" font-weight="700">Madoff</text>
+
+              <!-- SBF — $0 net, 25 years — HIGHLIGHTED -->
+              <circle cx="70" cy="240" r="20" fill="rgba(192,57,43,0.12)" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="none" class="sc-bubble sc-bubble--sbf" data-case-key="sbf" data-name="Sam Bankman-Fried" data-loss="$0 net (all creditors repaid in full)" data-sentence="25 years" data-note="98% of customers repaid with 20% interest. Billions remain in the estate. All assets recovered."/>
+              <text x="70" y="218" text-anchor="middle" font-size="8.5" fill="var(--accent)" font-family="system-ui" font-weight="700">SBF</text>
+              <line x1="70" y1="238" x2="70" y2="290" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+              <text x="70" y="302" text-anchor="middle" font-size="8" fill="var(--accent)" font-family="system-ui">←$0 net harm</text>
+            </svg>
+            <!-- Hover tooltip -->
+            <div class="sc-tooltip" id="sc-tooltip" hidden>
+              <div class="sc-tt-name" id="sc-tt-name"></div>
+              <div class="sc-tt-row"><span>Loss:</span><span id="sc-tt-loss"></span></div>
+              <div class="sc-tt-row"><span>Sentence:</span><span id="sc-tt-sent"></span></div>
+              <div class="sc-tt-note" id="sc-tt-note"></div>
+            </div>
+          </div>
+        </div>
+        <!-- ══ END SENTENCE COMPARISON ══ -->
+
+        <!-- Charges Grid -->
+        <div class="charges-section">
+          <h3 class="reveal">The Charges: Tried and Severed</h3>
+          <p class="reveal" style="font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin-bottom: 0;">All seven counts tried at the first trial resulted in guilty verdicts. Five additional charges were severed and never brought to trial—yet evidence of those charges was admitted at trial anyway, under Second Circuit rules.</p>
+
+          <div class="charges-grid">
+            <div class="charges-col">
+              <div class="charges-col-header">Tried at First Trial (Oct–Nov 2023)</div>
+              <div class="charge-card charge-card--guilty verdict-stamp" data-delay="0">
+                <div class="charge-verdict">Guilty</div>
+                <div class="charge-name">Wire Fraud on Customers</div>
+              </div>
+              <div class="charge-card charge-card--guilty verdict-stamp" data-delay="150">
+                <div class="charge-verdict">Guilty</div>
+                <div class="charge-name">Wire Fraud on Lenders</div>
+              </div>
+              <div class="charge-card charge-card--guilty verdict-stamp" data-delay="300">
+                <div class="charge-verdict">Guilty</div>
+                <div class="charge-name">Conspiracy — Wire Fraud on Customers</div>
+              </div>
+              <div class="charge-card charge-card--guilty verdict-stamp" data-delay="450">
+                <div class="charge-verdict">Guilty</div>
+                <div class="charge-name">Conspiracy — Wire Fraud on Lenders</div>
+              </div>
+              <div class="charge-card charge-card--guilty verdict-stamp" data-delay="600">
+                <div class="charge-verdict">Guilty</div>
+                <div class="charge-name">Securities Fraud on Investors</div>
+              </div>
+              <div class="charge-card charge-card--guilty verdict-stamp" data-delay="750">
+                <div class="charge-verdict">Guilty</div>
+                <div class="charge-name">Commodities Fraud on Customers</div>
+              </div>
+              <div class="charge-card charge-card--guilty verdict-stamp" data-delay="900">
+                <div class="charge-verdict">Guilty</div>
+                <div class="charge-name">Money Laundering Conspiracy</div>
+              </div>
+            </div>
+
+            <div class="charges-col">
+              <div class="charges-col-header">Severed — Not Tried, Evidence Admitted</div>
+              <div class="charge-card charge-card--severed reveal">
+                <div class="charge-verdict">Severed</div>
+                <div class="charge-name">Campaign Finance Violations</div>
+              </div>
+              <div class="charge-card charge-card--severed reveal">
+                <div class="charge-verdict">Severed</div>
+                <div class="charge-name">Bank Fraud</div>
+              </div>
+              <div class="charge-card charge-card--severed reveal">
+                <div class="charge-verdict">Severed</div>
+                <div class="charge-name">Unlicensed Money Transmission</div>
+              </div>
+              <div class="charge-card charge-card--severed reveal">
+                <div class="charge-verdict">Severed</div>
+                <div class="charge-name">Bribery — Chinese Government (FCPA)</div>
+              </div>
+              <div class="charge-card charge-card--severed reveal">
+                <div class="charge-verdict">Severed</div>
+                <div class="charge-name">Securities Fraud on US Customers</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside class="recap-card" data-recap-id="section-iii">
+        <p class="recap-kicker">3 things you just learned</p>
+        <ul class="recap-list">
+          <li>Red-herring evidence can be vivid while still legally peripheral.</li>
+          <li>The argument here is that sentence severity diverged from net customer harm.</li>
+          <li>Untried allegations still influenced the story presented at trial.</li>
+        </ul>
+        <p class="recap-takeaway">Takeaway: narrative weight and legal relevance do not always move together.</p>
+        <a href="#appendix" class="recap-cta">Next section preview</a>
+      </aside>
+
+      <!-- ══════════════════════════════
+           APPENDIX OPENER
+      ══════════════════════════════ -->
+      <div class="chapter-opener">
+        <div class="chapter-watermark">A</div>
+        <div class="chapter-inner">
+          <span class="chapter-label">Appendix</span>
+          <h2 class="chapter-title">The Severed Charges</h2>
+          <p class="chapter-sub">Cases the government chose not to try—but used anyway</p>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           APPENDIX
+      ══════════════════════════════ -->
+      <section id="appendix" class="essay-section">
+        <div class="section-num">Appendix</div>
+        <h2 class="section-title">The Severed Charges</h2>
+
+        <p class="reveal"><mark class="highlight-mark">The government's bad faith is evident even more starkly</mark> in the six dropped charges, none of which it had a remotely viable case on. These charges were "severed" rather than tried—but under Second Circuit rules, evidence relevant to them was admitted at trial anyway. They allowed the prosecution to construct a sweeping narrative of criminality that bore little relation to the allegations the jury was actually asked to decide.</p>
+
+        <article id="campaign-finance" class="subsection casefile-card reveal" data-casefile>
+          <h3 class="sr-only">Campaign Finance Violations</h3>
+          <button
+            type="button"
+            class="casefile-toggle"
+            aria-expanded="false"
+            aria-controls="campaign-finance-panel"
+          >
+            <span class="casefile-tab">Casefile A</span>
+            <span class="casefile-charge">Campaign Finance Violations</span>
+            <span class="casefile-chevron" aria-hidden="true">▾</span>
+          </button>
+
+          <div class="casefile-head">
+            <div class="casefile-field"><span class="casefile-label">Charge:</span><span class="casefile-value">Straw donor / campaign finance violations</span></div>
+            <div class="casefile-field"><span class="casefile-label">Tried?</span><span class="casefile-value">No — severed before trial</span></div>
+            <div class="casefile-field"><span class="casefile-label">Evidence admitted?</span><span class="casefile-value">Yes — admitted as related-conduct narrative</span></div>
+            <div class="casefile-field"><span class="casefile-label">Core dispute:</span><span class="casefile-value">Whose money was used and whether routing was concealment</span></div>
+          </div>
+
+          <div id="campaign-finance-panel" class="casefile-panel" hidden>
+            <div class="casefile-body">
+              <div class="casefile-column">
+                <h4>Government framing</h4>
+                <p>Prosecutors argued Sam directed associates to route political contributions through their personal accounts as "loans," presenting the structure as an intentional straw-donor scheme designed to disguise source and control.</p>
+              </div>
+              <div class="casefile-column">
+                <h4>Defense framing</h4>
+                <p>The defense framing emphasized that contributions came from co-founders' own funds as equity holders, were disclosed in public reporting, and were cast as criminal regardless of whichever lawful pathway was chosen.</p>
+              </div>
+            </div>
+            <div class="casefile-footer">
+              <span class="casefile-chip">Why it mattered to jury perception</span>
+              <p>Even though severed, the charge supported a broad "political corruption" narrative that could color jurors' views of intent on counts actually being tried.</p>
+            </div>
+          </div>
+        </article>
+
+        <article id="bribery" class="subsection casefile-card reveal" data-casefile>
+          <h3 class="sr-only">Bribery of a Foreign Government Official (FCPA)</h3>
+          <button
+            type="button"
+            class="casefile-toggle"
+            aria-expanded="false"
+            aria-controls="bribery-panel"
+          >
+            <span class="casefile-tab">Casefile B</span>
+            <span class="casefile-charge">Bribery (FCPA)</span>
+            <span class="casefile-chevron" aria-hidden="true">▾</span>
+          </button>
+
+          <div class="casefile-head">
+            <div class="casefile-field"><span class="casefile-label">Charge:</span><span class="casefile-value">Foreign Corrupt Practices Act (FCPA) bribery</span></div>
+            <div class="casefile-field"><span class="casefile-label">Tried?</span><span class="casefile-value">No — severed before trial</span></div>
+            <div class="casefile-field"><span class="casefile-label">Evidence admitted?</span><span class="casefile-value">Yes — context evidence still presented</span></div>
+            <div class="casefile-field"><span class="casefile-label">Core dispute:</span><span class="casefile-value">Bribe for influence vs payment to recover frozen assets</span></div>
+          </div>
+
+          <div id="bribery-panel" class="casefile-panel" hidden>
+            <div class="casefile-body">
+              <div class="casefile-column">
+                <h4>Government framing</h4>
+                <p>Prosecutors described a roughly $40 million payment tied to the release of frozen accounts as a major bribery event, arguing it reflected willingness to deploy unlawful payments for business advantage.</p>
+              </div>
+              <div class="casefile-column">
+                <h4>Defense framing</h4>
+                <p>The defense framing cast the payment as a desperate recovery of Alameda's own frozen property, arranged mainly by Ellison, with Sam peripheral and not seeking a classic quid pro quo with Chinese officials.</p>
+              </div>
+            </div>
+            <div class="casefile-footer">
+              <span class="casefile-chip">Why it mattered to jury perception</span>
+              <p>Labeling the episode as historic bribery risked magnifying prejudice and reinforcing a sweeping criminal narrative beyond the counts presented for verdict.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="evidence-rail evidence-rail--section reveal-section" aria-label="Evidence by section">
+        <div class="evidence-rail__inner">
+          <div class="evidence-rail__header">
+            <span>Evidence Links</span>
+          </div>
+          <p class="evidence-rail__helper">Primary references grouped by topic.</p>
+
+          <div class="evidence-rail__group">
+            <p class="evidence-rail__label">Cooperators</p>
+            <ul class="evidence-links">
+              <li><a href="https://www.courtlistener.com/docket/66635085/united-states-v-bankman-fried/" target="_blank" rel="noopener noreferrer">Cooperator Sentencing</a></li>
+              <li><a href="https://www.courtlistener.com/docket/66635085/united-states-v-bankman-fried/" target="_blank" rel="noopener noreferrer">Trial Transcript (Ellison)</a></li>
+            </ul>
+          </div>
+
+          <div class="evidence-rail__group">
+            <p class="evidence-rail__label">Misappropriation</p>
+            <ul class="evidence-links">
+              <li><a href="https://web.archive.org/web/20220501000000*/https://ftx.com/legal/terms" target="_blank" rel="noopener noreferrer">FTX Terms §8.2</a></li>
+              <li><a href="https://web.archive.org/web/20220501000000*/https://ftx.com/legal/terms" target="_blank" rel="noopener noreferrer">FTX Terms §16.4</a></li>
+              <li><a href="https://www.courtlistener.com/docket/66635085/united-states-v-bankman-fried/" target="_blank" rel="noopener noreferrer">fiat@ Ledger (Jun 2022)</a></li>
+              <li><a href="https://www.courtlistener.com/docket/66635085/united-states-v-bankman-fried/" target="_blank" rel="noopener noreferrer">Docket: Expert Exclusions</a></li>
+              <li><a href="https://restructuring.ra.kroll.com/FTX/" target="_blank" rel="noopener noreferrer">Bankruptcy Disclosure</a></li>
+            </ul>
+          </div>
+
+          <div class="evidence-rail__group">
+            <p class="evidence-rail__label">Criminal Intent</p>
+            <ul class="evidence-links">
+              <li><a href="https://storage.courtlistener.com/recap/gov.uscourts.ca2.87358/gov.uscourts.ca2.87358.86.0.pdf" target="_blank" rel="noopener noreferrer">Appeal Brief §I.B</a></li>
+              <li><a href="https://www.courtlistener.com/docket/66635085/united-states-v-bankman-fried/" target="_blank" rel="noopener noreferrer">Sentencing Transcript</a></li>
+              <li><a href="https://www.courtlistener.com/docket/66635085/united-states-v-bankman-fried/" target="_blank" rel="noopener noreferrer">Trial Transcript (Ellison)</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+           FOOTER
+      ══════════════════════════════ -->
+      <footer class="essay-footer">
+        <div class="footer-inner">
+          <p><strong style="color: rgba(240,237,232,0.7);">Barbara H. Fried</strong> &mdash; William W. and Gertrude H. Saunders Professor of Law, Emeritus, Stanford Law School.</p>
+          <p>October 30, 2025 (rev.) &middot; Errors will be corrected in updated versions. The views expressed are those of the author alone.</p>
+        </div>
+      </footer>
+
+    </main>
+  </div><!-- /.layout -->
+
+
+  <div id="evidence-panel" class="evidence-panel" hidden>
+    <div class="evidence-panel__scrim" data-close-evidence></div>
+    <section class="evidence-panel__dialog" role="dialog" aria-modal="true" aria-labelledby="evidence-title">
+      <button type="button" class="evidence-panel__close" data-close-evidence aria-label="Close evidence panel">×</button>
+      <p class="evidence-panel__eyebrow">Evidence Reference</p>
+      <h3 id="evidence-title" class="evidence-panel__title"></h3>
+      <p class="evidence-panel__source-id" id="evidence-source-id"></p>
+      <p class="evidence-panel__summary"></p>
+      <p class="evidence-panel__meta"></p>
+      <a class="evidence-panel__link" href="#" target="_blank" rel="noopener noreferrer">Open source ↗</a>
+    </section>
+  </div>
+
+  <div id="footnote-tooltip" role="tooltip" aria-hidden="true"></div>
+  <div id="term-tooltip" role="tooltip" aria-live="polite"></div>
+  <div id="num-pop-tooltip" role="tooltip"></div>
+
+  <div id="person-card" role="dialog" aria-modal="true" aria-label="Person profile">
+    <button class="pc-close" id="pc-close" aria-label="Close profile">×</button>
+    <div class="pc-header">
+      <div class="pc-emoji" id="pc-emoji"></div>
+      <div><div class="pc-name" id="pc-name"></div><div class="pc-role" id="pc-role"></div></div>
+    </div>
+    <blockquote class="pc-quote" id="pc-quote"></blockquote>
+    <div class="pc-status" id="pc-status"></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
